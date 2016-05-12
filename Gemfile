@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+#For Heroku deployment
+group :production do
+  gem 'rails_12factor'
+end
