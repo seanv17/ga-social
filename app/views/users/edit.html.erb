@@ -1,2 +1,10 @@
 <h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+
+<%= form_for @user do |f| %>
+<div class="row">
+  <div class="form-group">
+    <%= f.text_field :email, class: "form-control", placeholder: "Email", autofocus: true %>
+  </div>
+</div>
+<center><%= f.submit "Save", class: "btn btn-success" %></center>
+<% end %>
