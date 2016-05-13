@@ -1,14 +1,25 @@
-<section>
-  <div class="container">
-    <% for user in @users %>
-    <div class="card">
-      <div class="card-block">
-        <p class="card-image"><%= image_tag user.avatar.url(:medium) %>
-        <p class="card-text"><b>Name: </b><%= user.first_name %> <%= user.last_name %></p>
-        <p class="card-text"><b>Current City: </b><%= user.current_city %></p>
-      </div>
+<div class="userindex">
+  <section>
+    <div class="container">
+      <% for user in @users %>
+      <div class="row">
+        <div class="card">
+          <div class="card-block">
+            <div class="col-xs-2">
+              <%= image_tag user.avatar.url(:thumb) %>
+            </div>
+            <div class="col-xs-10">
+              <p><b>Name: </b><%= user.first_name %> <%= user.last_name %></p>
+              <p><b>Current City: </b><%= user.current_city %></p>
+              <p><b>Current Employer: </b><%= user.current_employer %></p>
+              <p><b>Current Position: </b><%= user.current_position %></p>
+              <p><b>Seeking Work: </b><%= user.seeking_work %></p>
+              <p><b>Tech Preference: </b><%= user.tech_preference %></p>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <% end %>
     </div>
-
-    <% end %>
-  </div>
-</section>
+  </section>
+</div>
