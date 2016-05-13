@@ -70,7 +70,7 @@
 
 /*global variables*/
   section {
-      padding-top: 60px;
+      padding-top: 100px;
   }/*closes variables*/
 
 /* Start of user#index view */
@@ -80,7 +80,23 @@
       width: 100%;
     }
 
+    h1 {
+      margin-top: -3px;
+      color: black;
+    }
+
+    a {
+      color: black;
+    }
+
+    a:hover,
+    a:focus {
+      color: black;
+      font-color: black;
+    }
+
   }
+
 /* Start of user#show view */
   .usershow {
 

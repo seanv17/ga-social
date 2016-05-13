@@ -26,9 +26,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Cohort", splash_path %></li>
-            <li><%= link_to "Profile", splash_path %></li>
-            <li><%= link_to "Posts", splash_path %></li>
+            <li><%= link_to "Cohort", users_path %></li>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Posts", posts_path %></li>
             <!-- links before dropdown go here in li tags -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -46,6 +46,7 @@
       </div><!-- /.container-fluid -->
     </nav>
     <!-- END NAVBAR -->
+  </div>
 ​
 ​
 <%= yield %>
