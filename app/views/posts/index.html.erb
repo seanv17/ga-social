@@ -8,14 +8,14 @@
   <div>
     <strong><div> <%= post.user.first_name %> <%= post.user.last_name %>
   </div></strong> <br>
-  <div> <%= post.body %> </div></strong>
+  <div> <%= post.body %> </div><br>
 
     <% if current_user.id == post.user_id%>
       <div>
         <%= button_to "Edit Post", edit_post_path(post), method: 'get', class: 'btn btn-warning' %>
       </div>
     <% end %>
-  </div><br>
+  </div><hr>
   <% end %>
   <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
 </div>
