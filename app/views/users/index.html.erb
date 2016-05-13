@@ -9,7 +9,7 @@
               <%= link_to image_tag(user.avatar.url(:thumb), :class => 'img-circle'), user_path( User.find_by_id(user.id) ) %>
             </div>
             <div class="col-xs-10">
-              <p><b>Name: </b><%= user.first_name %> <%= user.last_name %></p>
+              <h1><%= link_to "#{user.first_name} #{user.last_name}", user_path( User.find_by_id(user.id) ) %></h1>
               <p><b>Current City: </b><%= user.current_city %></p>
               <p><b>Current Employer: </b><%= user.current_employer %></p>
               <p><b>Current Position: </b><%= user.current_position %></p>
