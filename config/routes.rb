@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/users/:user_id/posts/:id", to: "posts#show", as: :user_post
   put "/users/:user_id/posts/:id", to: "posts#update"
   delete "/users/:user_id/posts/:id", to: "posts#destroy"
-#-----------------------------USER PATHS---------------------------------------
+#-----------------------------USER PATHS----------------------------------------
   get "/users", to: "users#index", as: :users
   post "/users", to: "users#create"
   get "/users/new", to: "users#new", as: :new_user
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "/users/:id", to: "users#show", as: :user
   put "/users/:id", to: "users#update"
   delete "/users/:id", to: "users#destroy"
-
+#-----------------------------POST PATHS----------------------------------------
+  get "posts", to:"posts#index", as: :posts 
 
 end

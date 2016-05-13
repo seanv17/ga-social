@@ -1,12 +1,8 @@
 class PostsController < ApplicationController
 
   def index
-    if current_user
-      @post = Post.new
-      @user = current_user
-    else
-      redirect_to splash_path
-    end
+    @posts = Post.all
+    render :index
   end
 
   def show
