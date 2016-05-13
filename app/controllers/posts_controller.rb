@@ -42,8 +42,10 @@ class PostsController < ApplicationController
     render :show
   end
 
-  def delete
-
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    index
   end
 
   private
