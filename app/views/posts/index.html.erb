@@ -1,0 +1,11 @@
+<h1>GA-Social Posts</h1>
+<div>
+  <%= button_to "Add New Post", new_post_path, method: 'get', class: 'btn btn-primary' %>
+</div><hr>
+<div>
+  <% for post in @posts do %>
+  <div>
+    <%= post.body %>
+  </div><br>  
+  <% end %>
+</div>

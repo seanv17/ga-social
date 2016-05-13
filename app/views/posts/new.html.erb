@@ -1,0 +1,14 @@
+<h1>Add New Post</h1>
+
+<%= form_for @post do |f| %>
+  <div class="row">
+    <div class="well col-md-4 col-md-offset-4">
+      <div class="form-group">
+        <%= f.text_area :body, class: "form-control", placeholder: "Body", autofocus: true %>
+      </div>
+    </div>
+    <div>
+      <center><%= f.submit "Save", class: "btn btn-success" %></center>
+    </div>
+  </div>
+<% end %>
