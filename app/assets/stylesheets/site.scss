@@ -16,6 +16,7 @@
     color: green;
     font-weight: bold;
     font-size: 17px;
+    font-color: black;
   }
 
   .navbar {
@@ -57,7 +58,17 @@
 
   .gear  {
     margin-top: -10px;
-    width: 25px;
+    width: 22px;
+  }
+
+  .dropdown-menu  {
+    a {color: black;}
   }
 
 } /*closes navbar*/
+
+
+/*global variables*/
+  section {
+      padding-top: 40px;
+  }/*closes variables*/
