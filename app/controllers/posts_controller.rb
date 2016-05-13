@@ -37,10 +37,6 @@ class PostsController < ApplicationController
 
   end
 
-  def add
-
-  end
-
   def delete
 
   end
