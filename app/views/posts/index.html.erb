@@ -6,6 +6,11 @@
   <% for post in @posts do %>
   <div>
     <%= post.body %>
-  </div><br>  
+    <%= if current_user == post.user_id%>
+      <div>
+        <%= button_to "Edit Profile", edit_post_path(post), method: 'get', class: 'btn btn-warning' %>
+      </div>
+    <% end %>
+  </div><br>
   <% end %>
 </div>

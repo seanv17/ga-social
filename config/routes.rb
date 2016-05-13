@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "/posts", to: "posts#index", as: :posts
   post "/posts", to: "posts#create"
   get "/posts/new", to: "posts#new", as: :new_post
+  get "/posts/:id/edit", to: "posts", as: :edit_post
 
 
 end
