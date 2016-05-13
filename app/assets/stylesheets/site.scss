@@ -70,7 +70,7 @@
 
 /*global variables*/
   section {
-      padding-top: 60px;
+      padding-top: 100px;
   }/*closes variables*/
 
 /* Start of user#index view */
@@ -85,6 +85,15 @@
       color: black;
     }
 
+    a {
+      color: black;
+    }
+
+    a:hover,
+    a:focus {
+      color: black;
+      font-color: black;
+    }
 
   }
 
