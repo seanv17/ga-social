@@ -2,9 +2,14 @@
 
 <%= form_for @user do |f| %>
 <div class="row">
+
+  <div class="form-group">
+    <%= f.file_field :avatar %>
+  </div>
   <div class="form-group">
     <%= f.text_field :first_name, class: "form-control", placeholder: "First name", autofocus: true %>
-  </div><div class="form-group">
+  </div>
+  <div class="form-group">
     <%= f.text_field :last_name, class: "form-control", placeholder: "Last name", autofocus: true %>
   </div>
   <div class="form-group">
