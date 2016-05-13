@@ -6,14 +6,16 @@
 <div>
   <% for post in @posts do %>
   <div>
-    <strong><div><%= post.user.first_name %> <%= post.user.last_name %></div></strong>
-    <br>
-    <div><%= post.body %></div><br>
+    <%= post.body %>
     <% if current_user.id == post.user_id%>
       <div>
-        <%= button_to "Edit Post", edit_post_path(post), method: 'get', class: 'btn btn-warning' %>
+        <%= button_to "Edit Profile", edit_post_path(post), method: 'get', class: 'btn btn-warning' %>
       </div>
     <% end %>
-  </div><hr>
+  </div><br>
   <% end %>
 </div>
+
+
+
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
