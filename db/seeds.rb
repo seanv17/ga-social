@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# User.destroy_all
+User.destroy_all
 
 User.create(first_name: 'Sean', last_name: 'Van Houten', email: 'seanv@gmail.com', current_city: 'Oakland', image: 'http://wisemansay.co.uk/wp-content/uploads/2010/09/Celebrity-Image-Simpsons-Bart-Simpson-72600.jpg', password: "123456", current_employer: "google", seeking_work: true, tech_preference: "javascript")
 User.create(first_name: 'Neil', last_name: 'Patrick', email: 'neil@gmail.com', current_city: 'San Francisco', image: 'http://images6.fanpop.com/image/photos/33100000/simosons-the-simpsons-33176742-250-250.jpg', password: "123456", current_employer: "facebook", seeking_work: false, tech_preference: "ruby")
