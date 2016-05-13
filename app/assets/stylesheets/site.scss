@@ -2,12 +2,73 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.jumbotron {
-  background-image: url(generalassembly-logo.png);
-  background-size: cover;
-  height: 500px;
-}
+#mainNav {
+  /*navbar a tag properties*/
+  a {
+    color: white;
+    font-weight: 450;
+    font-size: 17px;
+  }
 
-h1 {
-  margin-top: -50px;
-}
+  /*navbar drop down*/
+  a:hover,
+  a:focus {
+    color: green;
+    font-weight: bold;
+    font-size: 17px;
+    font-color: black;
+  }
+
+  .navbar {
+    background-color: black;
+  }
+
+  /*navbar vagabond text properties*/
+  .navbar-default .navbar-header .navbar-brand {
+      text-transform: uppercase;
+      font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 25px;
+      color: white;
+  }
+
+  /*navbar vagabond text changes color on hover*/
+  .navbar-default .navbar-header .navbar-brand:hover,
+  .navbar-default .navbar-header .navbar-brand:focus {
+    color: green;
+  }
+
+  /*navbar li changes color on hover*/
+  .navbar-default .nav > li>a:hover,
+  .navbar-default .nav>li>a:focus:hover {
+      color: green;
+  }
+
+  .page-scroll {
+    position: fixed;
+    left: 70px;
+  }
+
+  .brand {
+    position: fixed;
+    width: 45px;
+    top: 2px;
+    left: 10px;
+  }
+
+  .gear  {
+    margin-top: -10px;
+    width: 22px;
+  }
+
+  .dropdown-menu  {
+    a {color: black;}
+  }
+
+} /*closes navbar*/
+
+
+/*global variables*/
+  section {
+      padding-top: 40px;
+  }/*closes variables*/
