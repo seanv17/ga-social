@@ -5,7 +5,7 @@
 #mainNav {
   /*navbar a tag properties*/
   a {
-    color: #FF6103;
+    color: white;
     font-weight: 450;
     font-size: 17px;
   }
@@ -18,13 +18,17 @@
     font-size: 17px;
   }
 
+  .navbar {
+    background-color: black;
+  }
+
   /*navbar vagabond text properties*/
   .navbar-default .navbar-header .navbar-brand {
       text-transform: uppercase;
       font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
       font-weight: 700;
       font-size: 25px;
-      color: #FF6103;
+      color: white;
   }
 
   /*navbar vagabond text changes color on hover*/
@@ -46,89 +50,14 @@
 
   .brand {
     position: fixed;
-    width: 50px;
-    top: 5px;
+    width: 45px;
+    top: 2px;
     left: 10px;
   }
 
+  .gear  {
+    margin-top: -10px;
+    width: 25px;
+  }
+
 } /*closes navbar*/
-
-/*global variables*/
-  section {
-      padding-top: 25px;
-  }
-  hr {
-    max-width: 100px;
-    border-color: orange;
-    border-width: 3px;
-  }
-  header {
-    position: relative;
-    width: 100%;
-    min-height: 100%;
-    text-align: center;
-    color: #fff;
-    background-image: url("landing_page.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 575px;
-  }
-
-header .header-content {
-    position: relative;
-    width: 100%;
-    padding: 100px 15px;
-    text-align: center;
-}
-
-header .header-content .header-content-inner h1 {
-    margin-top: 10%;
-    /*text-transform: uppercase;*/
-    font-weight: 900;
-    font-size:80px;
-    color: #FF6103;
-}
-
-header .header-content .header-content-inner hr {
-    margin: 30px auto;
-}
-
-header .header-content .header-content-inner p {
-    margin-bottom: 300px;
-    font-size: 30px;
-    font-weight: 60;
-    color: white;
-}
-
-@media(min-width:768px) {
-    header {
-        min-height: 100%;
-    }
-
-    header .header-content {
-        position: absolute;
-        top: 30%;
-        padding: 0 50px;
-        transform: translateY(-50%);
-    }
-
-    header .header-content .header-content-inner {
-        margin-right: auto;
-        margin-left: auto;
-        max-width: 1000px;
-    }
-
-    header .header-content .header-content-inner h1 {
-        margin-top: 60%;
-        font-size: 100px;
-    }
-
-    header .header-content .header-content-inner p {
-        margin-right: auto;
-        margin-left: auto;
-        max-width: 80%;
-        font-size: 45px;
-        font-weight: 30;
-    }
-  }/*closes @media*/
-/*end of global*/
