@@ -1,0 +1,32 @@
+<h1>Users#edit</h1>
+
+<%= form_for @user do |f| %>
+<div class="row">
+
+  <div class="form-group">
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :first_name, class: "form-control", placeholder: "First name", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :last_name, class: "form-control", placeholder: "Last name", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :email, class: "form-control", placeholder: "Email", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :current_city, class: "form-control", placeholder: "Current City", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :current_position, class: "form-control", placeholder: "Current Position", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :current_employer, class: "form-control", placeholder: "Employer", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :tech_preference, class: "form-control", placeholder: "Technology Preference", autofocus: true %>
+  </div>
+</div>
+<center><%= f.submit "Save", class: "btn btn-success" %></center>
+<% end %>

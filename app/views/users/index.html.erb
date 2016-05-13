@@ -1,0 +1,25 @@
+<div class="userindex">
+  <section>
+    <div class="container">
+      <% for user in @users %>
+      <div class="row">
+        <div class="card">
+          <div class="card-block">
+            <div class="col-xs-2">
+              <%= link_to image_tag(user.avatar.url(:thumb), :class => 'img-circle'), user_path( User.find_by_id(user.id) ) %>
+            </div>
+            <div class="col-xs-10">
+              <h1><%= link_to "#{user.first_name} #{user.last_name}", user_path( User.find_by_id(user.id) ) %></h1>
+              <p><b>Current City: </b><%= user.current_city %></p>
+              <p><b>Current Employer: </b><%= user.current_employer %></p>
+              <p><b>Current Position: </b><%= user.current_position %></p>
+              <p><b>Seeking Work: </b><%= yesno(user.seeking_work) %></p>
+              <p><b>Tech Preference: </b><%= user.tech_preference %></p>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <% end %>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,27 @@
+
+<div class="usershow">
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          <%= image_tag @user.avatar.url(:medium) %>
+        </div>
+        <div class="col-xs-8">
+          <p><b>Name: </b><%= @user.first_name %> <%= @user.last_name %></p>
+          <p><b>Email: </b><%= @user.email %></p>
+          <p><b>Current City: </b><%= @user.current_city %></p>
+          <p><b>Current Position: </b><%= @user.current_position %></p>
+          <p><b>Current Employer: </b><%= @user.current_employer %></p>
+          <p><b>Seeking Work: </b><%= @user.seeking_work %></p>
+          <p><b>Technology Preference: </b><%= @user.tech_preference %></p>
+        </div>
+      </div>
+      <br />
+      <% if current_user.id == @user.id%>
+      <div>
+        <button class="btn btn-warning"><%= link_to "Edit", edit_user_path %></button>
+      </div>
+      <% end %>
+    </div>
+  </section>
+</div>
