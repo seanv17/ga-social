@@ -6,18 +6,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    if current_user
       @post = Post.new
       @user = current_user
       render :new
-    else
-      redirect_to splash_path
-    end
   end
 
   def create
     post = Post.new(post_params)
-    post.user = current_user
+    post.user_id = 1
     if post.save
       redirect_to posts_path
     else
