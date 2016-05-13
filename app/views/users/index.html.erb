@@ -3,6 +3,7 @@
     <% for user in @users %>
     <div class="card">
       <div class="card-block">
+        <p class="card-image"><%= image_tag user.avatar.url(:medium) %>
         <p class="card-text"><b>Name: </b><%= user.first_name %> <%= user.last_name %></p>
         <p class="card-text"><b>Current City: </b><%= user.current_city %></p>
       </div>
