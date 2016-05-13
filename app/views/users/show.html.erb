@@ -17,9 +17,11 @@
         </div>
       </div>
       <br />
+      <% if current_user.id == @user.id%>
       <div>
         <button class="btn btn-warning"><%= link_to "Edit", edit_user_path %></button>
       </div>
+      <% end %>
     </div>
   </section>
 </div>
