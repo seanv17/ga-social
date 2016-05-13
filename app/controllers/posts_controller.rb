@@ -32,19 +32,14 @@ class PostsController < ApplicationController
   end
 
   def update
-
+    post = Post.find(params[:id])
+    post.update_attributes(post_params)
+    redirect_to posts_path
   end
 
-# def update
-#   @user = User.find(params[:user_id])
-#   post = Post.find(params[:id])
-#   post.update_attributes(post_params)
-#   flash[:notice] = "Post updated."
-#   redirect_to user_path(@user)
-# end
-
   def show
-
+    @post = Post.find(params[:id])
+    render :show
   end
 
   def delete

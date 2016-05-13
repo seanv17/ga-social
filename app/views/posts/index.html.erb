@@ -1,4 +1,5 @@
 <h1>GA-Social Posts</h1>
+
 <div>
   <%= button_to "Add New Post", new_post_path, method: 'get', class: 'btn btn-primary' %>
 </div><hr>
@@ -6,7 +7,7 @@
   <% for post in @posts do %>
   <div>
     <%= post.body %>
-    <%= if current_user == post.user_id%>
+    <% if current_user.id == post.user_id%>
       <div>
         <%= button_to "Edit Profile", edit_post_path(post), method: 'get', class: 'btn btn-warning' %>
       </div>
