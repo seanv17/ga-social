@@ -15,7 +15,12 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # bootstrap
+<<<<<<< HEAD
 gem 'bootstrap-saas', '~> 3.2.0'
+=======
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+>>>>>>> 4c038e964e8e33d4f1ee8ced7a16540bf817e232
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -39,7 +44,8 @@ gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'hirb'
 end
 
 group :development do
