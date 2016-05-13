@@ -26,15 +26,20 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    @post = Post.find(params[:id])
+    @user = current_user
+    render :edit
   end
 
   def update
-
+    post = Post.find(params[:id])
+    post.update_attributes(post_params)
+    redirect_to posts_path
   end
 
   def show
-
+    @post = Post.find(params[:id])
+    render :show
   end
 
   def delete
@@ -47,12 +52,5 @@ class PostsController < ApplicationController
     params.require(:post).permit(:body, :user_id)
   end
 
-
-
-
-  def set_user
-    user_id = params[:id]
-    @user = User.find_by_id(user_id)
-  end
 
 end
