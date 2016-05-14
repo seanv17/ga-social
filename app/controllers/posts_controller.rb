@@ -52,9 +52,6 @@ class PostsController < ApplicationController
          format.json { respond_with_bip(@post) }
        end
      end
-    # post = Post.find(params[:id])
-    # post.update_attributes(post_params)
-    #redirect_to posts_path
   end
 
   def show
