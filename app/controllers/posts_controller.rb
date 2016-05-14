@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 6)
+    @posts = Post.all
+    if params[:search]
+      @posts = Post.search(params[:search])
+    else
+      @posts = Post.paginate(:page => params[:page], :per_page => 6)
+    end
     render :index
   end
 
