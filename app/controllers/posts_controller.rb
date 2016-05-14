@@ -3,11 +3,15 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     if params[:search]
-      @posts = Post.search(params[:search])
+      @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 6)
     else
       @posts = Post.paginate(:page => params[:page], :per_page => 6)
     end
     render :index
+  end
+
+  def search
+    render :search
   end
 
   def new
