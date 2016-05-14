@@ -56,13 +56,20 @@
     left: 10px;
   }
 
-  .gear  {
-    margin-top: -10px;
-    width: 22px;
-  }
-
   .dropdown-menu  {
     a {color: black;}
+  }
+
+  .caret {
+    border-width: 7px;
+  }
+
+  .abcde .text {
+    display: none;
+  }
+
+  .abcde.collapse .text {
+    display: inline-block;
   }
 
 } /*closes navbar*/

@@ -31,6 +31,9 @@ gem 'devise'
 #best_in_place enables inline editing
 gem 'best_in_place', '~> 3.0.1'
 
+# font awesome
+gem 'font-awesome-rails'
+
 # bootstrap form helper
 gem 'simple_form'
 
@@ -45,7 +48,10 @@ gem 'will_paginate-bootstrap'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
+  # Rails c database display
   gem 'hirb'
+  # Enables access to .env through local variables before starting app
+  gem 'foreman'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
