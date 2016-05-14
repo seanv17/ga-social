@@ -1,3 +1,4 @@
+<div class="postindex">
 <h1>GA-Social Posts</h1>
 
 <div>
@@ -8,7 +9,7 @@
   <div>
     <strong><div><%=link_to post.user.first_name + " " + post.user.last_name, user_path(post.user)%></div></strong>
   </div></strong> <br>
-  <div> <%= post.body %> </div><br>
+  <div> <%= image_tag post.avatar.url %> <%= post.body %> </div><br>
 
     <% if current_user.id == post.user_id%>
       <div>
@@ -23,4 +24,5 @@
   </div><hr>
   <% end %>
   <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
+</div>
 </div>
