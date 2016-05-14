@@ -10,9 +10,7 @@
 
         <% if current_user.id == post.user_id%>
           <!--best_in_place gem enables inline editing  -->
-          <div>
-            <%= best_in_place post, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
-          </div><br>
+            <%= best_in_place post, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %><br><br>
             <%= button_to "Delete", post_path(post) , method: :delete,
                 data: {confirm: "Are you sure you want to delete this post?"}, class: 'btn btn-danger' %>
         <% else %>
