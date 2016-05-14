@@ -31,6 +31,9 @@ gem 'devise'
 #best_in_place enables inline editing
 gem 'best_in_place', '~> 3.0.1'
 
+# font awesome
+gem 'font-awesome-rails'
+
 # bootstrap form helper
 gem 'simple_form'
 
