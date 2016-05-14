@@ -12,7 +12,7 @@
           <p><b>Current City: </b><%= @user.current_city %></p>
           <p><b>Current Position: </b><%= @user.current_position %></p>
           <p><b>Current Employer: </b><%= @user.current_employer %></p>
-          <p><b>Seeking Work: </b><%= @user.seeking_work %></p>
+          <p><b>Seeking Work: </b><%= yesno(@user.seeking_work) %></p>
           <p><b>Technology Preference: </b><%= @user.tech_preference %></p>
         </div>
       </div>
