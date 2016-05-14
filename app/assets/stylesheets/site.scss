@@ -62,7 +62,15 @@
 
   .caret {
     border-width: 7px;
-}
+  }
+
+  .abcde .text {
+    display: none;
+  }
+
+  .abcde.collapse .text {
+    display: inline-block;
+  }
 
 } /*closes navbar*/
 
