@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   patch "/posts/:id", to: "posts#create"
   delete "posts/:id", to: "posts#destroy"
 
-
+  get "/posts/:id/comments", to: "comments#index", as: :comments
+  post "/posts/:id/comments", to: "comments#create"
+  get "/posts/:id/comments/new", to: "comments#new", as: :new_comment
 
 end
