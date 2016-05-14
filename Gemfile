@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
+#best_in_place enables inline editing
+gem 'best_in_place', '~> 3.0.1'
 
 # bootstrap form helper
 gem 'simple_form'
