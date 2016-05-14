@@ -52,8 +52,13 @@
     <!-- END NAVBAR -->
   </div>
 ​
+  #flash notice handling
+  <%= render 'layouts/messages' %>
+  <div class="container">
+  <%= render 'layouts/messages' %>
 ​
-<%= yield %>
+  <%= yield %>
+  </div>
 ​
 </body>
 </html>
