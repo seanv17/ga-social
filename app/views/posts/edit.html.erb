@@ -6,6 +6,9 @@
       <div class="form-group">
         <%= f.text_area :body, class: "form-control", placeholder: "Body", autofocus: true %>
       </div>
+      <div>
+        <%= f.file_field :avatar %>
+      </div>
     </div>
     <div>
       <center><%= f.submit "Save", class: "btn btn-success" %></center>
