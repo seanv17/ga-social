@@ -32,12 +32,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update_attributes(post_params)
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
     redirect_to posts_path
   end
 
   def show
+
     @post = Post.find(params[:id])
     tag = @post.comments.all
     @comments = tag.hash_tree

@@ -4,6 +4,8 @@
 
   <blockquote>
     <p><%= comment.body %></p>
+    <% my_edit_path = "/posts/" + params[:id] + "/comments/" + comment.id.to_s%>
+    <%= button_to "Edit Comment", my_edit_path, method: 'get', class: 'btn btn-warning' %>
   </blockquote>
 <% my_path = "/posts/" + params[:id] + "/comments/new/" + comment.id.to_s%>
   <p><%= link_to 'reply', my_path %></p>

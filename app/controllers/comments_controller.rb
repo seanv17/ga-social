@@ -16,17 +16,13 @@ class CommentsController < ApplicationController
 
       @comment = parent.children.build(comment_params)
       @comment.user_id = current_user.id
-        @comment.post_id = params[:post_id]
-      # @comment.user = current_user
+      @comment.post_id = params[:post_id]
 
     else
 
       @comment = Comment.new(comment_params)
       @comment.user_id = current_user.id
-        @comment.post_id = params[:post_id]
-
-
-      # @comment.post_id = params[:id]
+      @comment.post_id = params[:post_id]
     end
 
     if @comment.save
@@ -37,6 +33,16 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find_by_id(params[:id])
+    if current_user == @comment.user
+      render :edit
+    else
+      flash[:error] = "You can only edit your own comments"
+      redirect_to post_path(params[:post_id])
+    end
+
+  end
 
 
 
