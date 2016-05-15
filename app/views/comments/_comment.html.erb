@@ -5,6 +5,6 @@
   <blockquote>
     <p><%= comment.body %></p>
   </blockquote>
-
-  <p><%= link_to 'reply', new_comment_path(@post) %></p>
+<% my_path = "/posts/" + params[:id] + "/comments/new/" + comment.id.to_s%>
+  <p><%= link_to 'reply', my_path %></p>
 </div>

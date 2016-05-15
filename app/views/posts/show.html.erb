@@ -3,7 +3,7 @@
 
 <%= @post.body %>
 
- <%= link_to 'Add a Comment', new_comment_path, class: 'btn btn-primary btn-lg' %>
+ <%= link_to 'Add a Comment', new_comment_path(@post), class: 'btn btn-primary btn-lg' %>
 
 <% if @comments %>
   <%= render @comments %>

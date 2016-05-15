@@ -16,21 +16,22 @@ class CommentsController < ApplicationController
 
       @comment = parent.children.build(comment_params)
       @comment.user_id = current_user.id
-        @comment.post_id = params[:id]
+        @comment.post_id = params[:post_id]
       # @comment.user = current_user
 
     else
 
       @comment = Comment.new(comment_params)
       @comment.user_id = current_user.id
-        @comment.post_id = params[:id]
+        @comment.post_id = params[:post_id]
+
 
       # @comment.post_id = params[:id]
     end
 
     if @comment.save
       flash[:success] = 'Your comment was successfully added!'
-      redirect_to post_path
+      redirect_to post_path(params[:post_id])
     else
       render 'new'
     end
