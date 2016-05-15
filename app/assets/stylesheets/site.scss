@@ -167,6 +167,7 @@
 
 /* Start of splash view */
 #splash {
+  margin-top: 54px;
 
   .jumbotron {
     margin-top: -45px;
@@ -174,6 +175,10 @@
 
   #office {
     background-image: url(office-background.jpg);
+  }
+
+  #whiteboard {
+    background-image: url(whiteboard.jpg);
   }
 
 }
