@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   put "/posts/:id", to: "posts#update"
   delete "posts/:id", to: "posts#destroy"
 
+  post "/posts/:id/like", to: 'posts#like', as: :like_post 
+
 
 
 
