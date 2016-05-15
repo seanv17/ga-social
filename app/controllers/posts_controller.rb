@@ -39,7 +39,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.all
+    tag = @post.comments.all
+    @comments = tag.hash_tree
     render :show
   end
 
