@@ -65,6 +65,12 @@ class PostsController < ApplicationController
     index
   end
 
+  def like
+    @post = Post.find(params[:id])
+    @like = Like.create(like: params[:id], user: current_user, post: @post)
+    redirect_to :back
+  end
+
   private
 
   def post_params
