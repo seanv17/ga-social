@@ -4,6 +4,7 @@
 
 #mainNav {
   /*navbar a tag properties*/
+
   a {
     color: white;
     font-weight: 450;
@@ -21,15 +22,23 @@
 
   .navbar {
     background-color: black;
+    height: 40px;
+  }
+
+  .navbar-collapse .navbar-right {
+    font-family: 'News_706';
+    font-size: 2px;
+    margin-top: -20px;
   }
 
   /*navbar text properties*/
   .navbar-default .navbar-header .navbar-brand {
       text-transform: uppercase;
-      font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
+      font-family: 'PDF_in_Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-weight: 700;
-      font-size: 25px;
+      font-size: 30px;
       color: white;
+      margin-top: 3px;
   }
 
   /*navbar text changes color on hover*/
@@ -51,25 +60,26 @@
 
   .brand {
     position: fixed;
-    width: 45px;
-    top: 2px;
-    left: 10px;
+    width: 30px;
+    top: 10px;
+    left: 35px;
+  }
+
+  .dropdown {
+    margin-top: -10px;
   }
 
   .dropdown-menu  {
     a {color: black;}
   }
 
+  .fa {
+    font-size: 23px;
+    margin-top: 5px;
+  }
+
   .caret {
     border-width: 7px;
-  }
-
-  .abcde .text {
-    display: none;
-  }
-
-  .abcde.collapse .text {
-    display: inline-block;
   }
 
 } /*closes navbar*/
