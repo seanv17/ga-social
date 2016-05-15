@@ -1,6 +1,9 @@
 <section>
   <div class="postsindex">
     <div class="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "flash notice" , id:"flash_notice" %>
+    <% end %>
       <h1>GA-Social Posts</h1>
       <%= button_to "Serach Posts", search_posts_path, method: 'get', class: 'btn btn-info' %><br>
       <%= button_to "Add New Post", new_post_path, method: 'get', class: 'btn btn-primary' %>
@@ -23,10 +26,11 @@
             <%= link_to like_post_path(post, like: false), method: :post do %>
             <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= post.thumbs_down_total %>
             <% end %>
+          </div>
         <% end %><hr>
         <% end %>
         <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
     </div>
   </div>
-</div>  
+</div>
 </section>
