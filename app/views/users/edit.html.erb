@@ -27,6 +27,9 @@
   <div class="form-group">
     <%= f.text_field :tech_preference, class: "form-control", placeholder: "Technology Preference", autofocus: true %>
   </div>
+  <div>
+    <%= link_to "Change your password", edit_user_registration_path %>
+  </div>
 </div>
 <center><%= f.submit "Save", class: "btn btn-success" %></center>
 <% end %>
