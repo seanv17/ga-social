@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    include PostsHelper
 
   def index
     @posts = Post.all
@@ -69,7 +70,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     like = Like.create(like: params[:like], user: current_user, post: @post)
     if like.valid?
-      flash[:success] = "You liked post #{@post.id}"
+      flash[:success] = "You #{likedislike(like.like)} post #{@post.id}"
       redirect_to :back
     else
       flash[:danger] = "You can only like/dislike a posts once"
