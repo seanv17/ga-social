@@ -5,14 +5,28 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = Comment.new
+    @comment = Comment.new(parent_id: params[:parent_id])
   end
 
   def create
 
-    @comment = Comment.new(comment_params)
-    @comment.user = current_user
-    @comment.post_id = params[:id]
+
+    if params[:comment][:parent_id].to_i > 0
+      parent = Comment.find_by_id(params[:comment].delete(:parent_id))
+
+      @comment = parent.children.build(comment_params)
+      @comment.user_id = current_user.id
+        @comment.post_id = params[:id]
+      # @comment.user = current_user
+
+    else
+
+      @comment = Comment.new(comment_params)
+      @comment.user_id = current_user.id
+        @comment.post_id = params[:id]
+
+      # @comment.post_id = params[:id]
+    end
 
     if @comment.save
       flash[:success] = 'Your comment was successfully added!'
@@ -21,6 +35,9 @@ class CommentsController < ApplicationController
       render 'new'
     end
   end
+
+
+
 
 
 private

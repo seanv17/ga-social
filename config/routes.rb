@@ -23,6 +23,5 @@ Rails.application.routes.draw do
 
   get "/posts/:id/comments", to: "comments#index", as: :comments
   post "/posts/:id/comments", to: "comments#create"
-  get "/posts/:id/comments/new", to: "comments#new", as: :new_comment
-
+  get "/posts/:id/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
 end

@@ -1,9 +1,10 @@
 <div class="well">
-  <h2><%= comment.title %></h2>
   <p class="text-muted">Added by ....... on
     <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
 
   <blockquote>
     <p><%= comment.body %></p>
   </blockquote>
+
+  <p><%= link_to 'reply', new_comment_path(@post) %></p>
 </div>
