@@ -53,12 +53,11 @@
   </div>
 ​
   #flash notice handling
-  <%= render 'layouts/messages' %>
-  <div class="container">
-  <%= render 'layouts/messages' %>
+  <div class="container" id="flash">
+    <%= render 'layouts/messages' %>
+  </div>
 ​
   <%= yield %>
-  </div>
 ​
 </body>
 </html>
