@@ -68,7 +68,13 @@ class PostsController < ApplicationController
   def like
     @post = Post.find(params[:id])
     like = Like.create(like: params[:like], user: current_user, post: @post)
-    redirect_to :back
+    if like.valid?
+      flash[:success] = "You liked post #{@post.id}"
+      redirect_to :back
+    else
+      flash[:danger] = "You can only like/dislike a posts once"
+      redirect_to :back
+    end
   end
 
   private
