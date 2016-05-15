@@ -32,4 +32,5 @@ post10 = Post.create(body: 'post 2 Lorem ipsum dolor sit amet, putent alienum se
 post11 = Post.create(body: 'post 1 Lorem ipsum dolor sit amet, putent alienum sed no, cum cu natum sadipscing, tibique volutpat at pri. Sea cu malis volumus signiferumque. Ne vim tamquam fuisset, doctus audire urbanitas id mea. Nec ei verterem suavitate, quo eligendi lobortis no.', user_id: user_6.id)
 post12 = Post.create(body: 'post 2 Lorem ipsum dolor sit amet, putent alienum sed no, cum cu natum sadipscing, tibique volutpat at pri. Sea cu malis volumus signiferumque. Ne vim tamquam fuisset, doctus audire urbanitas id mea. Nec ei verterem suavitate, quo eligendi lobortis no.', user_id: user_6.id)
 
-Comment.create(body: "First Comment to Post1 User 1", post_id: post1.id, user_id: user_1.id)
+Comment.create(body: "First Comment to Post1", post_id: post1.id, user_id: user_1.id)
+Comment.create(body: "First Comment to Post1", post_id: post2.id, user_id: user_1.id)

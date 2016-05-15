@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = 'Your comment was successfully added!'
-      redirect_to post_path(params[:post_id])
+      redirect_to posts_path
     else
       render 'new'
     end
