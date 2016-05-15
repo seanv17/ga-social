@@ -24,6 +24,11 @@
       </div>
 
     <% end %>
+    <% tag = post.comments.all %>
+    <% comments = tag.hash_tree %>
+    <% if comments %>
+      <%= comments_tree_for comments %>
+    <% end %>
   </div><hr>
   <% end %>
   <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>

@@ -63,7 +63,7 @@ class CommentsController < ApplicationController
     #   redirect_to post_path(params[:post_id])
     # else
     #   flash[:error] = post.errors.full_messages_to_sentence
-    #
+    #`redirect_to post_path(params[:post_id])`
     # end
   end
 
