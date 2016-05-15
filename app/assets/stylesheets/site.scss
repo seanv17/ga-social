@@ -120,8 +120,17 @@
 
 /* Start of sign in view */
 #signin {
-  width: 400px;
+  width: 370px;
   margin: 0 auto;
+  vertical-align: middle;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 40px;
+
+  .btn-primary {
+    width: 263px;
+  }
+
 }
 
 
