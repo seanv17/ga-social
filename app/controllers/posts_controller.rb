@@ -67,7 +67,7 @@ class PostsController < ApplicationController
 
   def like
     @post = Post.find(params[:id])
-    @like = Like.create(like: params[:id], user: current_user, post: @post)
+    like = Like.create(like: params[:like], user: current_user, post: @post)
     redirect_to :back
   end
 
