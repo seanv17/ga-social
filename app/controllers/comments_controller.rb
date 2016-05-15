@@ -35,6 +35,8 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find_by_id(params[:id])
+    p @comment
+    render :edit
     if current_user == @comment.user
       render :edit
     else
@@ -44,6 +46,26 @@ class CommentsController < ApplicationController
 
   end
 
+  def update
+    comment = Comment.find_by_id[:id]
+    comment.update(comment_params)
+    redirect_to post_path(params[:post_id])
+
+  end
+
+  def destroy
+    comment = Comment.find_by_id(params[:id])
+    comment.destroy
+    redirect_to post_path(params[:post_id])
+
+    # if comment.destroy
+    #   flash[:notice] = "Comment deleted."
+    #   redirect_to post_path(params[:post_id])
+    # else
+    #   flash[:error] = post.errors.full_messages_to_sentence
+    #
+    # end
+  end
 
 
 

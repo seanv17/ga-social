@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   post "/posts/:post_id/comments", to: "comments#create"
   get "/posts/:post_id/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
   get "/posts/:post_id/comments/:id", to: "comments#edit", as: :edit_comment
-  put "/posts/:post_id/comments/:id", to: "comments#create"
+  patch "/posts/:post_id/comments/:id", to: "comments#create"
+  delete "/posts/:post_id/comments/:id", to: "comments#destroy"
 end
