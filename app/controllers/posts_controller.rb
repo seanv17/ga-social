@@ -56,6 +56,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    tag = @post.comments.all
+    @comments = tag.hash_tree
     render :show
   end
 
@@ -65,10 +67,22 @@ class PostsController < ApplicationController
     index
   end
 
+  def like
+    @post = Post.find(params[:id])
+    like = Like.create(like: params[:like], user: current_user, post: @post)
+    if like.valid?
+      flash[:success] = "You liked post #{@post.id}"
+      redirect_to :back
+    else
+      flash[:danger] = "You can only like/dislike a posts once"
+      redirect_to :back
+    end
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:body, :user_id)
+    params.require(:post).permit(:body, :user_id, :avatar)
   end
 
 

@@ -1,30 +1,53 @@
-<div class="postindex">
-  <h1>GA-Social Posts</h1>
-  <div>
-    <%= button_to "Serach Posts", search_posts_path, method: 'get', class: 'btn btn-info' %>
-    <div><br>
-      <div>
-        <%= button_to "Add New Post", new_post_path, method: 'get', class: 'btn btn-primary' %>
-      </div><hr>
-      <div>
+<section>
+  <div id="postsindex">
+    <div class="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "flash notice" , id:"flash_notice" %>
+    <% end %>
+      <h1>GA-Social Posts</h1>
+      <%= button_to "Serach Posts", search_posts_path, method: 'get', class: 'btn btn-info' %><br>
+      <%= button_to "Add New Post", new_post_path, method: 'get', class: 'btn btn-primary' %>
+      <hr>
         <% for post in @posts do%>
-        <div>
-          <strong><div><%=link_to post.user.first_name + " " + post.user.last_name, user_path(post.user)%></div></strong>
-        </div></strong> <br>
+          <b>Posted by: <%=link_to post.user.first_name + " " + post.user.last_name, user_path(post.user)%></b> <span class="quiet"><small><%= time_ago_in_words(post.created_at) %> ago</small></span><br>
 
           <% if current_user.id == post.user_id%>
             <!--best_in_place gem enables inline editing  -->
-            <div><%= best_in_place post, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %></div><br>
-            <div>
+              <%= best_in_place post, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+
+              <%= button_to "Show", post_path(post) , method: 'get', class: 'btn btn-danger' %><br><br>
+
               <%= button_to "Delete", post_path(post) , method: :delete,
                   data: {confirm: "Are you sure you want to delete this post?"}, class: 'btn btn-danger' %>
-            </div>
           <% else %>
-            <%= image_tag post.avatar.url %> <%= post.body %>
+            <%= image_tag post.avatar? ? post.avatar.url(:medium): "" %> <%= post.body %>
+            <div class="likes pull-right">
+              <%= link_to like_post_path(post, like: true), method: :post do %>
+              <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= post.thumbs_up_total %>
+              <% end %>
+              &nbsp&nbsp&nbsp
+              <%= link_to like_post_path(post, like: false), method: :post do %>
+              <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= post.thumbs_down_total %>
+              <% end %>
+            </div>
+          <% end %>
+            <%= link_to 'Add a Comment', new_comment_path(post), class: 'btn btn-primary btn-sm' %><hr>
+          <% count = 0 %>
+        <% post.comments.all.each do |c|%>
+
+          <% if c.root?%>
+            <%  count = count + 1%>
+          <% end%>
         <% end %>
-      </div><hr>
+        <%= count.to_s + " comments"%>
+        <% tag = post.comments.all %>
+        <% comments = tag.hash_tree %>
+        <% if comments %>
+          <%= comments_tree_for comments %>
+        <% end %>
       <% end %>
       <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
+      <%= page_entries_info @posts %>
     </div>
   </div>
-</div>
+</section>
