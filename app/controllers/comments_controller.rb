@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def index
-      @comments = Comment.all
+    @comments = Comment.all
   end
 
   def new
@@ -9,28 +9,28 @@ class CommentsController < ApplicationController
   end
 
   def create
-
-
     if params[:comment][:parent_id].to_i > 0
       parent = Comment.find_by_id(params[:comment].delete(:parent_id))
-
       @comment = parent.children.build(comment_params)
       @comment.user_id = current_user.id
       @comment.post_id = params[:post_id]
-
     else
-
       @comment = Comment.new(comment_params)
       @comment.user_id = current_user.id
       @comment.post_id = params[:post_id]
     end
 
     if @comment.save
+      create_notifications @post, @comment
+      respond_to do |format|
+        format.html { redirect_to splash_path }
+        format.js
       flash[:success] = 'Your comment was successfully added!'
       redirect_to posts_path
     else
       render 'new'
     end
+    
   end
 
   def edit
