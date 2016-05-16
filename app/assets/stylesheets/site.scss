@@ -28,6 +28,14 @@
     height: 40px;
   }
 
+  .notification-dropdown {
+    margin-top: 10px;
+
+    button {
+      border: none;
+    }
+  }
+
   .navbar-collapse .navbar-right {
     font-family: 'News_706';
     font-size: 2px;
