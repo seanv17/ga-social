@@ -2,8 +2,7 @@
   <p class="text-muted">Added by <%= comment.user.first_name %> <%= comment.user.last_name %> on
     <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
 
-
-    <p><%= comment.body %></p>
+    <%= best_in_place comment, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
     <% my_edit_path = "/posts/" + comment.post.id.to_s + "/comments/" + comment.id.to_s%>
     <% if comment.user == current_user %>
       <%= button_to "Edit Comment", my_edit_path, method: 'get', class: 'btn btn-warning' %>

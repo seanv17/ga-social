@@ -8,9 +8,12 @@ class CommentsController < ApplicationController
     @comment = Comment.new(parent_id: params[:parent_id])
   end
 
+  def show
+    @comment = Comment.find_by_id(params[:id])
+
+  end
+
   def create
-
-
     if params[:comment][:parent_id].to_i > 0
       parent = Comment.find_by_id(params[:comment].delete(:parent_id))
 
@@ -47,9 +50,24 @@ class CommentsController < ApplicationController
   end
 
   def update
-    comment = Comment.find_by_id[:id]
-    comment.update(comment_params)
-    redirect_to post_path(params[:post_id])
+    # post = Post.find(params[:id])
+    comment = Comment.find_by_id(params[:id])
+    p "this is the comment" + comment.body
+    # comment.update(comment_params)
+    # redirect_to post_path(params[:post_id])
+#------------best in place---------------------
+    respond_to do |format|
+      if comment.update_attributes(comment_params)
+        p "here inside respond"
+        format.html { redirect_to(comment, :notice => 'comment update was successfully updated.') }
+        format.json { respond_with_bip(comment) }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(comment) }
+      end
+    end
+
+
 
   end
 
