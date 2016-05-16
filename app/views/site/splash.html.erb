@@ -1,4 +1,21 @@
-<div class="jumbotron">
-  <h1>Welcome to GA-Social</h1>
-  <h2>Where alumni students can stay in touch</h2>
+<div id="splash">
+  <div class="col-sm-8 col-md-8 col-lg-8" id="office">
+    <h1 id="connected">STAYING CONNECTED</h1>
+      <div id="office-blurb">
+        Stay in touch with your beloved cohort. No matter where we end up, we can continue to share and learn.
+        <%= button_to "Sign in & see more!", new_user_session_path, :method => "get", :class => "btn btn-danger", :id => "main-btn" %>
+      </div>
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4" id="right-side">
+    <div class="child" id="whiteboard">
+      <h3 class="sides">Life After WDI</h3>
+      <p>Going at it together</p>
+      <%= button_to "WDI 28 Schedule", 'https://github.com/sf-wdi-27-28/schedule-28', :method => "get", :class => "btn btn-danger side-btn", form: {target: '_blank'} %>
+    </div>
+    <div class="child" id="class">
+      <h3 class="sides">Looking Back & Moving Forward</h2>
+      <p>Clear eyes, fulls hearts, can't lose</p>
+      <%= button_to "Surprise...", 'https://vimeo.com/45196609', :method => "get", :class => "btn btn-danger side-btn", form: {target: '_blank'} %>
+    </div>
+  </div>
 </div>
