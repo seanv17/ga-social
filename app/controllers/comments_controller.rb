@@ -21,12 +21,13 @@ class CommentsController < ApplicationController
     end
 
     if @comment.save
-      create_notifications @post, @comment
+      create_notification @comment
       respond_to do |format|
-        format.html { redirect_to splash_path }
+        format.html { redirect_to posts_path }
         format.js
       flash[:success] = 'Your comment was successfully added!'
-      redirect_to posts_path
+      # redirect_to posts_path
+      end
     else
       render 'new'
     end
@@ -71,14 +72,15 @@ class CommentsController < ApplicationController
 
 private
 
-def create_notification(post)
-  return if post.user.id == current_user.id
+def create_notification(comment)
+  post = Post.find_by_id(comment.post_id)
+  return if current_user.id == post.user_id
   Notification.create(user_id: post.user.id,
                       notified_by_id: current_user.id,
                       post_id: post.id,
                       comment_id: comment.id,
                       notice_type: 'comment')
-end  
+end
 
   def comment_params
     params.require(:comment).permit(:body,:user_id,:post_id)
