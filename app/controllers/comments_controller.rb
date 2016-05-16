@@ -31,7 +31,6 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = 'Your comment was successfully added!'
-      @posts = Post.paginate( :page => params[:page])
       redirect_to session.delete(:return_to)
 
     else
