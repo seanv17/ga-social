@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get "/posts/:post_id/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
   get "/posts/:post_id/comments/:id", to: "comments#edit", as: :edit_comment
   delete "/posts/:post_id/comments/:id", to: "comments#destroy"
-
+#----------------------------NOTIFACATIONS PATHS-------------------------------------
   get "/notifications", to: "notifications#index", as: :notifications
-
+  get "/notifications/:id/link_through", to: "notifications#link_through", as: :link_through
 end
