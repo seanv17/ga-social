@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
     else
       render 'new'
     end
-    
+
   end
 
   def edit
@@ -70,6 +70,15 @@ class CommentsController < ApplicationController
 
 
 private
+
+def create_notification(post)
+  return if post.user.id == current_user.id
+  Notification.create(user_id: post.user.id,
+                      notified_by_id: current_user.id,
+                      post_id: post.id,
+                      comment_id: comment.id,
+                      notice_type: 'comment')
+end  
 
   def comment_params
     params.require(:comment).permit(:body,:user_id,:post_id)
