@@ -1,8 +1,17 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 6)
+    @posts = Post.all
+    if params[:search]
+      @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 6)
+    else
+      @posts = Post.paginate(:page => params[:page], :per_page => 6)
+    end
     render :index
+  end
+
+  def search
+    render :search
   end
 
   def new
@@ -32,9 +41,17 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update_attributes(post_params)
-    redirect_to posts_path
+    @post = Post.find params[:id]
+    # code for best_in_place gem - inline editing
+     respond_to do |format|
+       if @post.update_attributes(post_params)
+         format.html { redirect_to(@posts, :notice => 'post was successfully updated.') }
+         format.json { respond_with_bip(@post) }
+       else
+         format.html { render :action => "edit" }
+         format.json { respond_with_bip(@post) }
+       end
+     end
   end
 
   def show
@@ -50,10 +67,22 @@ class PostsController < ApplicationController
     index
   end
 
+  def like
+    @post = Post.find(params[:id])
+    like = Like.create(like: params[:like], user: current_user, post: @post)
+    if like.valid?
+      flash[:success] = "You liked post #{@post.id}"
+      redirect_to :back
+    else
+      flash[:danger] = "You can only like/dislike a posts once"
+      redirect_to :back
+    end
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:body, :user_id)
+    params.require(:post).permit(:body, :user_id, :avatar)
   end
 
 
