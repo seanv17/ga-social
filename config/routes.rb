@@ -22,10 +22,12 @@ Rails.application.routes.draw do
   patch "/posts/:id", to: "posts#update"
   put "/posts/:id", to: "posts#update"
   delete "posts/:id", to: "posts#destroy"
-
-  post "/posts/:id/like", to: 'posts#like', as: :like_post 
-
-
-
+  post "/posts/:id/like", to: 'posts#like', as: :like_post
+#----------------------------COMMENTS PATHS-------------------------------------
+  get "/posts/:post_id/comments", to: "comments#index", as: :comments
+  post "/posts/:post_id/comments", to: "comments#create"
+  get "/posts/:post_id/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
+  get "/posts/:post_id/comments/:id", to: "comments#edit", as: :edit_comment
+  delete "/posts/:post_id/comments/:id", to: "comments#destroy"
 
 end
