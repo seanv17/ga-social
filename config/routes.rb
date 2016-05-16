@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'notifications/index'
+
   devise_for :users
 
   root 'site#splash', as: :splash
@@ -30,6 +32,6 @@ Rails.application.routes.draw do
   get "/posts/:post_id/comments/:id", to: "comments#edit", as: :edit_comment
   delete "/posts/:post_id/comments/:id", to: "comments#destroy"
 
-  get "/notitications", to: "notifications#index", as: :notifications
+  get "/notifications", to: "notifications#index", as: :notifications
 
 end
