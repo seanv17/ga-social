@@ -1,0 +1,40 @@
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav navbar-right">
+    <% if user_signed_in? %>
+    <div class="dropdown notification-dropdown">
+      <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button"
+      aria-haspopup="true" aria-expanded="true">
+        <%= current_user.notifications.count %>
+        <span class="glyphicon glyphicon-flag"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labeledby="dropdownMenu1">
+        <li class="dropdown-header text-center">Notifications</li>
+          <%= current_user.notifications.order('created_at DESC').last(5) %>
+        <li class="divider" role="separator"></li>
+        <li class="text-center"><%= link_to 'View All', notifications_path %></li>
+      </ul>
+    </div>
+    <li><%= link_to "Cohort", users_path %></li>
+    <li><%= link_to current_user.first_name.capitalize + "'s Profile", user_path(current_user.id) %></li>
+    <li><%= link_to "Posts", posts_path %></li>
+    <% end %>
+    <!-- links before dropdown go here in li tags -->
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-cog icon-white" aria-hidden="true"></i>
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <%if user_signed_in? %>
+          <li><%= link_to("Sign Out", destroy_user_session_path, :method => :delete) %></li>
+        <%else%>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+<!-- END NAVBAR -->
