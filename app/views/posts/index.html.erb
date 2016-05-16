@@ -47,6 +47,7 @@
         <% end %>
       <% end %>
       <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
+      <%= page_entries_info @posts %>
     </div>
   </div>
 </section>
