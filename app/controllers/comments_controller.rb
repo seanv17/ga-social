@@ -72,15 +72,15 @@ class CommentsController < ApplicationController
 
 private
 
-def create_notification(comment)
-  post = Post.find_by_id(comment.post_id)
-  return if current_user.id == post.user_id
-  Notification.create(user_id: post.user.id,
-                      notified_by_id: current_user.id,
-                      post_id: post.id,
-                      comment_id: comment.id,
-                      notice_type: 'comment')
-end
+  def create_notification(comment)
+    post = Post.find_by_id(comment.post_id)
+    return if current_user.id == post.user_id
+    Notification.create(user_id: post.user.id,
+                        notified_by_id: current_user.id,
+                        post_id: post.id,
+                        comment_id: comment.id,
+                        notice_type: 'comment')
+  end
 
   def comment_params
     params.require(:comment).permit(:body,:user_id,:post_id)

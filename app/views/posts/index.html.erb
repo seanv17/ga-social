@@ -10,7 +10,6 @@
       <hr>
         <% for post in @posts do%>
           <b>Posted by: <%=link_to post.user.first_name + " " + post.user.last_name, user_path(post.user)%></b> <span class="quiet"><small><%= time_ago_in_words(post.created_at) %> ago</small></span><br>
-
           <% if current_user.id == post.user_id%>
             <!--best_in_place gem enables inline editing  -->
               <%= best_in_place post, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
@@ -29,6 +28,7 @@
               <%= link_to like_post_path(post, like: false), method: :post do %>
               <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= post.thumbs_down_total %>
               <% end %>
+              <%= link_to 'Add a Comment', new_comment_path(post), class: 'btn btn-primary btn-lg' %>
             </div>
           <% end %><hr>
           <% count = 0 %>
