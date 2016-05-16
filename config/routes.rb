@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   post "/posts", to: "posts#create"
   get "/posts/search", to: "posts#search", as: :search_posts
   get "/posts/:id/edit", to: "posts#edit", as: :edit_post
-  get "/posts/:id", to: "posts#show", as: :post
   get "/posts/new", to: "posts#new", as: :new_post
+  get "/posts/:id", to: "posts#show", as: :post
+
   patch "/posts/:id", to: "posts#update"
   put "/posts/:id", to: "posts#update"
   delete "posts/:id", to: "posts#destroy"
@@ -26,8 +27,8 @@ Rails.application.routes.draw do
 #----------------------------COMMENTS PATHS-------------------------------------
   get "/posts/:post_id/comments", to: "comments#index", as: :comments
   post "/posts/:post_id/comments", to: "comments#create"
-  get "/comments/:id/", to: "comments#show", as: :comment
   get "/posts/:post_id/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
+  get "/comments/:id/", to: "comments#show", as: :comment
   get "/posts/:post_id/comments/:id", to: "comments#edit", as: :edit_comment
   patch "/posts/:post_id/comments/:id", to: "comments#update"
   put "/comments/:id", to: "comments#update"

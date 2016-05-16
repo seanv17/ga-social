@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    session[:return_to] ||= request.referer
     if current_user
       @post = Post.new
       @user = current_user

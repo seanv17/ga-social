@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def new
+    session[:return_to] ||= request.referer
     @comment = Comment.new(parent_id: params[:parent_id])
   end
 
@@ -30,13 +31,16 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = 'Your comment was successfully added!'
-      redirect_to posts_path
+      @posts = Post.paginate( :page => params[:page])
+      redirect_to session.delete(:return_to)
+
     else
       render 'new'
     end
   end
 
   def edit
+
     @comment = Comment.find_by_id(params[:id])
     p @comment
     render :edit
