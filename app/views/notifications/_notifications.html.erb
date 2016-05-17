@@ -2,7 +2,7 @@
   <div class="dropdown notification-dropdown">
     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button"
     aria-haspopup="true" aria-expanded="true">
-      <%= current_user.notifications.count %>
+      <%= current_user.notifications.where(read: false).count %>
       <span class="glyphicon glyphicon-flag"></span>
     </button>
     <ul class="dropdown-menu" aria-labeledby="dropdownMenu1">
