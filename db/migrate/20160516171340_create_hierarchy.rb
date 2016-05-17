@@ -1,6 +1,6 @@
 class CreateHierarchy < ActiveRecord::Migration
   def change
-    drop_table :comment_hierarchies
+    # drop_table :comment_hierarchies
 
    create_table :comment_hierarchies, :id => false do |t|
      t.integer  :ancestor_id, :null => false   # ID of the parent/grandparent/great-grandparent/... comments
@@ -15,5 +15,5 @@ class CreateHierarchy < ActiveRecord::Migration
    # For "all ancestors of…" selects,
    add_index :comment_hierarchies, [:descendant_id],
              :name => "comment_desc_idx"
- end
+  end
 end

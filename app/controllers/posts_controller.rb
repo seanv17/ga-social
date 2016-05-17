@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+
     if params[:search]
-      @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 6)
+      @posts = Post.order(updated_at: :desc).search(params[:search]).paginate(:page => params[:page], :per_page => 6)
     else
-      @posts = Post.paginate(:page => params[:page], :per_page => 6)
+      @posts = Post.order(updated_at: :desc).paginate(:page => params[:page], :per_page => 6)
     end
     render :index
   end
@@ -55,7 +55,6 @@ class PostsController < ApplicationController
   end
 
   def show
-
     @post = Post.find(params[:id])
     tag = @post.comments.all
     @comments = tag.hash_tree
