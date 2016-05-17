@@ -38,6 +38,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = current_user
     render :edit
+
   end
 
   def update
@@ -55,10 +56,14 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    tag = @post.comments.all
-    @comments = tag.hash_tree
-    render :show
+    if Post.exists?(params[:id])
+      @post = Post.find(params[:id])
+      tag = @post.comments.all
+      @comments = tag.hash_tree
+      render :show
+    else
+      redirect_to splash_path
+    end  
   end
 
   def destroy

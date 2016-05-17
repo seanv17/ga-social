@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find_by_id(params[:id])
+    redirect_to splash_path
   end
 
   def create

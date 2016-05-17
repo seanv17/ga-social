@@ -31,14 +31,13 @@
 6. Mailboxer
 7. Paperclip
 8. will_paginate_bootstrap
+9. data-confirm-modal
 
 ##Application Flow
   ![alt text](GA Social App Flow.png)
-  
+
 ##Team Members
 Hila Vaisler
 Bob Kliger
 Sean Van Ho
 Sam Huang
-
-

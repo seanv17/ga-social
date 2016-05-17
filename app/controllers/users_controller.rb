@@ -1,10 +1,26 @@
 class UsersController < ApplicationController
   def show
-    @user = User.friendly.find(params[:id])
+    if User.friendly.exists? params[:id]
+      @user = User.friendly.find(params[:id]) || "No User"
+        render :show
+    else
+      redirect_to splash_path
+    end
+
   end
 
   def edit
-    @user = User.friendly.find(params[:id])
+    if User.friendly.exists? params[:id]
+      @user = User.friendly.find(params[:id])
+      if current_user == @user
+        render :edit
+      else
+        flash[:error] = "You can only edit your own profile"
+        redirect_to splash_path
+      end
+    else
+      redirect_to splash_path
+    end
   end
 
   def update
