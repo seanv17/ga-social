@@ -37,6 +37,9 @@ gem 'font-awesome-rails'
 # bootstrap form helper
 gem 'simple_form'
 
+# friendly_id
+gem 'friendly_id', '~> 5.1'
+
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
