@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def index
-      @comments = Comment.all
+    @comments = Comment.all
   end
 
   def new
@@ -10,35 +10,35 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find_by_id(params[:id])
-
   end
 
   def create
     if params[:comment][:parent_id].to_i > 0
       parent = Comment.find_by_id(params[:comment].delete(:parent_id))
-
       @comment = parent.children.build(comment_params)
       @comment.user_id = current_user.id
       @comment.post_id = params[:post_id]
-
     else
-
       @comment = Comment.new(comment_params)
       @comment.user_id = current_user.id
       @comment.post_id = params[:post_id]
     end
 
     if @comment.save
+      create_notification @comment
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.js
       flash[:success] = 'Your comment was successfully added!'
+      # redirect_to posts_path
+      end
       redirect_to posts_path
-
     else
       render 'new'
     end
   end
 
   def edit
-
     @comment = Comment.find_by_id(params[:id])
     p @comment
     render :edit
@@ -48,7 +48,6 @@ class CommentsController < ApplicationController
       flash[:error] = "You can only edit your own comments"
       redirect_to post_path(params[:post_id])
     end
-
   end
 
   def update
@@ -68,9 +67,6 @@ class CommentsController < ApplicationController
         format.json { respond_with_bip(comment) }
       end
     end
-
-
-
   end
 
   def destroy
@@ -86,13 +82,20 @@ class CommentsController < ApplicationController
     end
   end
 
-
-
 private
+
+  def create_notification(comment)
+    post = Post.find_by_id(comment.post_id)
+    return if current_user.id == post.user_id
+    Notification.create(user_id: post.user.id,
+                        notified_by_id: current_user.id,
+                        post_id: post.id,
+                        comment_id: comment.id,
+                        notice_type: 'comment')
+  end
 
   def comment_params
     params.require(:comment).permit(:body,:user_id,:post_id)
   end
-
 
 end
