@@ -40,6 +40,9 @@ gem 'simple_form'
 # friendly_id
 gem 'friendly_id', '~> 5.1'
 
+# messaging app
+gem 'mailboxer', '~> 0.13.0'
+
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

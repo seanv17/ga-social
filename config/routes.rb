@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'conversations/index'
+
   get 'notifications/index'
 
   devise_for :users
@@ -38,4 +40,10 @@ Rails.application.routes.draw do
 #----------------------------NOTIFACATIONS PATHS-------------------------------------
   get "/notifications", to: "notifications#index", as: :notifications
   get "/notifications/:id/link_through", to: "notifications#link_through", as: :link_through
+
+  # messages path
+  resources :conversations do
+    resources :messages
+  end
+
 end

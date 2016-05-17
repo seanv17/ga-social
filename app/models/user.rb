@@ -12,6 +12,16 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
+  acts_as_messageable
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  def mailboxer_email(object)
+    nil
+  end
+
   def slug_candidates
     [
       :first_name,
