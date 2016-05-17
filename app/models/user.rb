@@ -24,8 +24,7 @@ class User < ActiveRecord::Base
 
   def slug_candidates
     [
-      :first_name,
-      [:first_name, :last_name]
+      "#{first_name}-#{last_name}"
     ]
   end
 
