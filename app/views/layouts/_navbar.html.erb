@@ -19,11 +19,11 @@
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
 
-          <%= render '/notifications/notifications' %>
 
+          <li><%= render '/notifications/notifications' %></li>
           <li><%= link_to "Cohort", users_path %></li>
-          <li><%= link_to current_user.first_name.capitalize + "'s Profile", user_path(current_user.id) %></li>
           <li><%= link_to "Posts", posts_path %></li>
+          <li><%= link_to current_user.first_name.capitalize + "'s Profile", user_path(current_user.id) %></li>
           <% end %>
           <!-- links before dropdown go here in li tags -->
           <li class="dropdown">
