@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'conversations/index'
+
+  get 'notifications/index'
+
   devise_for :users
 
   root 'site#splash', as: :splash
@@ -33,5 +37,13 @@ Rails.application.routes.draw do
   patch "/posts/:post_id/comments/:id", to: "comments#update"
   put "/comments/:id", to: "comments#update"
   delete "/posts/:post_id/comments/:id", to: "comments#destroy"
+#----------------------------NOTIFACATIONS PATHS-------------------------------------
+  get "/notifications", to: "notifications#index", as: :notifications
+  get "/notifications/:id/link_through", to: "notifications#link_through", as: :link_through
+
+  # messages path
+  resources :conversations do
+    resources :messages
+  end
 
 end

@@ -2,22 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Start of Splash */
 #mainNav {
-  /*navbar a tag properties*/
+
+  #notifications {
+    margin-top: 20px;
+  }
+
+  #notificationlinks {
+    a {
+      color: blue;
+      font-size: 15px;
+    }
+    a:hover,
+    a:focus {
+      color: green;
+      font-weight: bold;
+      font-size: 17px;
+      font-color: black;
+    }
+  }
+
+  .dropdown-header {
+    color: red;
+    font-size: 20px;
+    font-family: 'News_706'
+  }
 
   a {
     color: white;
     font-weight: 450;
     font-size: 17px;
-  }
-
-  /*navbar drop down*/
-  a:hover,
-  a:focus {
-    color: green;
-    font-weight: bold;
-    font-size: 17px;
-    font-color: black;
   }
 
   .container-fluid {
@@ -28,13 +43,30 @@
     height: 40px;
   }
 
+  .notification-dropdown {
+    margin-top: 10px;
+
+    button {
+      border: none;
+    }
+  }
+
   .navbar-collapse .navbar-right {
     font-family: 'News_706';
     font-size: 2px;
     margin-top: -20px;
+
+    a:hover,
+    a:focus {
+      color: green;
+      font-weight: bold;
+      font-size: 17px;
+      font-color: black;
+    }
+
   }
 
-  /*navbar text properties*/
+  /*navbar brand text properties*/
   .navbar-default .navbar-header .navbar-brand {
       text-transform: uppercase;
       font-family: 'PDF_in_Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -44,28 +76,16 @@
       margin-top: 3px;
   }
 
-  /*navbar text changes color on hover*/
-  .navbar-default .navbar-header .navbar-brand:hover,
-  .navbar-default .navbar-header .navbar-brand:focus {
-    color: green;
-  }
-
-  /*navbar li changes color on hover*/
-  .navbar-default .nav > li>a:hover,
-  .navbar-default .nav>li>a:focus:hover {
-      color: green;
-  }
-
   .page-scroll {
     position: fixed;
-    left: 70px;
+    left: 50px;
   }
 
   .brand {
     position: fixed;
     width: 30px;
     top: 10px;
-    left: 35px;
+    left: 15px;
   }
 
   .dropdown {
@@ -94,7 +114,7 @@
   }/*closes variables*/
 
 /* Start of user#index view */
-  .userindex {
+  #userindex {
 
     img {
       width: 100%;
@@ -186,7 +206,7 @@
   #office {
     background-image: url(office-background.jpg);
     background-size: cover;
-    height: 462px;
+    height: 481px;
     align-items: center;
   }
 
@@ -227,7 +247,7 @@
   #class {
     background-image: url(class.jpg);
     background-size: cover;
-    margin-top: -18px;
+    margin-top: 1px;
     margin-left: -14px
   }
 
@@ -242,7 +262,7 @@
 }
 
 /* Start of user#show view */
-  .usershow {
+  #usershow {
 
     img {
       width: 100%;
@@ -250,7 +270,25 @@
 
   }
 
+  /* comments on comments indentation */
   .replies {margin-left: 50px;}
+
+/* Start of notifications#index view */
+#notificationsindex {
+  background-color: white;
+
+  #notification-index-list {
+    margin-top: 1em;
+    list-style: none;
+
+    li {
+      margin-top: 1em;
+      padding: 1em;
+      background-color: beige;
+    }
+  }
+
+}
 
 /* Start of post#index view */
   #postindex {
@@ -259,7 +297,8 @@
     }
   }
 
-  .postnew {
+/* Start of post#new view */
+  #postnew {
     h1 {
       margin-top: 50px;
     }
