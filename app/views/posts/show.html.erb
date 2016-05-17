@@ -1,10 +1,14 @@
-<h1>Posts#show,</h1>
-<p>Find me in app/views/posts/show,.html.erb</p>
-
-<%= @post.body %>
-
- <%= link_to 'Add a Comment', new_comment_path(@post), class: 'btn btn-primary btn-lg' %>
-
-<% if @comments %>
-<%= comments_tree_for @comments %>
-<% end %>
+<section>
+  <div class="container">
+    <div id="postshow">
+      <div>
+        <%= @post.user.first_name %>
+        <%= @post.body %><br /><br />
+        <%= link_to 'Add a Comment', new_comment_path(@post), class: 'btn btn-primary' %>
+      </div><br /><br />
+        <% if @comments %>
+          <%= comments_tree_for @comments %>
+        <% end %>
+    </div>
+  </div>
+</section>
