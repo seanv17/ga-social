@@ -1,0 +1,6 @@
+<ul id="notification-index-list">
+  <li id="notificationlinks">
+    <%= link_to "#{notification.notified_by.first_name} has #{notification.notice_type}ed on your post", link_through_path(notification) %>
+    <span class="quiet"><small><%= time_ago_in_words(notification.created_at) %> ago</small></span>
+  </li>
+</ul>
