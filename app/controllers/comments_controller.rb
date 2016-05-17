@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
   end
 
   def new
-    session[:return_to] ||= request.referer
     @comment = Comment.new(parent_id: params[:parent_id])
   end
 
@@ -31,7 +30,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = 'Your comment was successfully added!'
-      redirect_to session.delete(:return_to)
+      redirect_to posts_path
 
     else
       render 'new'
@@ -77,15 +76,14 @@ class CommentsController < ApplicationController
   def destroy
     comment = Comment.find_by_id(params[:id])
     comment.destroy
-    redirect_to posts_path
 
-    # if comment.destroy
-    #   flash[:notice] = "Comment deleted"
-    #   redirect_to post_path(params[:post_id])
-    # else
-    #   flash[:error] = post.errors.full_messages_to_sentence
-    #`redirect_to post_path(params[:post_id])`
-    # end
+    if comment.destroy
+      flash[:notice] = "Comment deleted"
+      redirect_to posts_path
+    else
+      flash[:error] = post.errors.full_messages_to_sentence
+      redirect_to posts_path
+    end
   end
 
 
