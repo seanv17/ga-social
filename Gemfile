@@ -40,6 +40,9 @@ gem 'simple_form'
 # friendly_id
 gem 'friendly_id', '~> 5.1'
 
+# Calls on bootstrap modals through rails' :confirm attributes
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+
 # messaging app
 gem 'mailboxer', '~> 0.13.0'
 
