@@ -1,18 +1,16 @@
 <div id="background">
   <div id="passwordnew">
-    <div class="inner-wrapper">
-      <div class="row">
-        <div class="col-xs-3">
-          <h4>Forgot your password?</h4>
-            <ul class="form-fields">
-              <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-                <%= devise_error_messages! %>
-                <%= f.input :email, placeholder: 'Enter email', autofocus: true %>
-                <%= f.submit "Reset password via email", :class=> 'btn btn-primary' %>
-            <% end %>
-          </ul>
-          <%= render "devise/shared/links" %>
-        </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <h4>Forgot your password?</h4>
+          <ul class="form-fields">
+            <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= devise_error_messages! %>
+              <%= f.input :email, placeholder: 'Enter email', autofocus: true %>
+              <%= f.submit "Reset password via email", :class=> 'btn btn-primary' %>
+          <% end %>
+        </ul>
+        <%= render "devise/shared/links" %>
       </div>
     </div>
   </div>
