@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Start of Splash */
 #mainNav {
-  /*navbar a tag properties*/
 
   #notifications {
     margin-top: 20px;
@@ -66,7 +66,7 @@
 
   }
 
-  /*navbar text properties*/
+  /*navbar brand text properties*/
   .navbar-default .navbar-header .navbar-brand {
       text-transform: uppercase;
       font-family: 'PDF_in_Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -114,7 +114,7 @@
   }/*closes variables*/
 
 /* Start of user#index view */
-  .userindex {
+  #userindex {
 
     img {
       width: 100%;
@@ -262,7 +262,7 @@
 }
 
 /* Start of user#show view */
-  .usershow {
+  #usershow {
 
     img {
       width: 100%;
@@ -270,6 +270,7 @@
 
   }
 
+  /* comments on comments indentation */
   .replies {margin-left: 50px;}
 
 /* Start of notifications#index view */
@@ -294,10 +295,10 @@
     h1 {
       margin-top: 50px;
     }
-
   }
 
-  .postnew {
+/* Start of post#new view */
+  #postnew {
     h1 {
       margin-top: 50px;
     }
