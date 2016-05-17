@@ -12,8 +12,7 @@
   <% end %>
 <%= f.hidden_field :parent_id %>
   <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control', required: true %>
+    <%= f.text_area :body, placeholder: "Enter new comment here", class: 'form-control', required: true %>
   </div>
 
   <%= f.submit class: 'btn btn-primary' %>
