@@ -113,6 +113,11 @@
 /* Start of user#index view */
   #userindex {
 
+    .row {
+      border-style: ridge;
+      border-width: .1px;
+    }
+
     img {
       width: 100%;
     }
