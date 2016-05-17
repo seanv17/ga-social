@@ -189,8 +189,7 @@
 
   #office-blurb {
     font-family: 'News_706';
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1.5rem;
     color: white;
     width: 490px;
     margin: 0 auto;
@@ -210,7 +209,7 @@
   h1 {
     font-family: 'PDF_in_Text';
     font-size: 80px;
-    color: #ad0115;
+    color: white;
     margin: 0 auto;
     padding-top: 15%;
   }
@@ -256,6 +255,26 @@
     font-family: 'Circular';
   }
 
+  #spotlight {
+    margin-top: 481px;
+    font-family: 'Circular';
+    background-color: #ececec;
+    height: 330px;
+    align: left;
+
+  .instructors {
+    display: inline-block;
+    padding: 10px;
+  }
+
+  h4 {
+    font-color: black;
+    padding-top: 45px;
+  }
+
+}
+
+/* End of Splash view */
 }
 
 /* Start of user#show view */
