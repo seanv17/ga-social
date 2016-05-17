@@ -30,9 +30,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to posts_path }
         format.js
       flash[:success] = 'Your comment was successfully added!'
-      # redirect_to posts_path
       end
-      redirect_to posts_path
     else
       render 'new'
     end
