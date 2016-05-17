@@ -39,7 +39,6 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find_by_id(params[:id])
     p @comment
-    render :edit
     if current_user == @comment.user
       render :edit
     else
