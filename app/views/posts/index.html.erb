@@ -22,7 +22,9 @@
                 </div>
                 <%= link_to 'Read more', post_path(post) %>
               <% else %>
-                <%= best_in_place post, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+                <div title="Click on post to edit">
+                  <%= best_in_place post, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+                </div>
               <% end %>
             </div>
               <%= button_to "Delete", post_path(post) , method: :delete,
