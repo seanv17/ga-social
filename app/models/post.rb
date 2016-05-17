@@ -20,4 +20,8 @@ class Post < ActiveRecord::Base
     self.likes.where(like: false).size
   end
 
+  def trunc
+    self.body.truncate(250)
+  end
+
 end
