@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#----------------------------------- GLOBALS ----------------------------------#
+/*----------------------------------- globals --------------------------------*/
 section {
   padding-top: 100px;
 }
@@ -10,7 +10,7 @@ section {
 /* comments on comments indentation */
 .replies {margin-left: 50px;}
 
-#---------------------------- CUSTOM BACKGROUND --------------------------------#
+/*---------------------------- CUSTOM BACKGROUND -----------------------------*/
 #background {
   background-image: url(signin-background.jpeg);
   background-repeat: no-repeat;
@@ -24,7 +24,7 @@ section {
   padding-top: -10px;
 }
 
-#------------------------------- START of SIGN IN -----------------------------#
+/*------------------------------ START of SIGN IN ----------------------------*/
 #signin {
   position: absolute;
   width: 370px;
@@ -52,7 +52,7 @@ section {
   }
 }
 
-#---------------------------- START of PASSWORD NEW ---------------------------#
+/*--------------------------- START of PASSWORD NEW --------------------------*/
   #passwordnew {
     position: absolute;
     width: 370px;
@@ -84,7 +84,7 @@ section {
 
   }
 
-#----------------------------- START of USER SHOW -----------------------------#
+/*---------------------------- START of USER SHOW ----------------------------*/
   #usershow {
 
     .row {
@@ -130,7 +130,7 @@ section {
 
   }
 
-#----------------------------- START of USER INDEX ----------------------------#
+/*---------------------------- START of USER INDEX ---------------------------*/
 #userindex {
   font-size: 15px;
 
@@ -195,7 +195,7 @@ section {
 
 }
 
-#--------------------------- START of USER EDIT -------------------------------#
+/*-------------------------- START of USER EDIT ------------------------------*/
   #useredit {
 
     .container {
@@ -230,7 +230,7 @@ section {
 
   }
 
-#----------------------------- START of NAVBAR --------------------------------#
+/*---------------------------- START of NAVBAR -------------------------------*/
 #mainNav {
 
   #notifications {
@@ -332,7 +332,7 @@ section {
 
 }
 
-#------------------------------ START of SPLASH -------------------------------#
+/*----------------------------- START of SPLASH ------------------------------*/
 #splash {
   margin-top: 54px;
   text-align: center;
@@ -426,7 +426,7 @@ section {
 
 }
 
-#------------------------ START of NOTIFICATIONS INDEX ------------------------#
+/*----------------------- START of NOTIFICATIONS INDEX -----------------------*/
 #notificationsindex {
   background-color: white;
 
@@ -443,21 +443,21 @@ section {
 
 }
 
-#---------------------------- START of POST INDEX -----------------------------#
+/*--------------------------- START of POST INDEX ----------------------------*/
   #postindex {
     h1 {
       margin-top: 50px;
     }
   }
 
-#---------------------------- START of POST NEW -------------------------------#
+/*--------------------------- START of POST NEW ------------------------------*/
   #postnew {
     h1 {
       margin-top: 50px;
     }
   }
 
-#--------------------------- START of COMMENT NEW -----------------------------#
+/*-------------------------- START of COMMENT NEW ----------------------------*/
   #commentnew {
     h1 {
       font-family: 'PDF_in_Text';
