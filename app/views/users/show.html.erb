@@ -7,9 +7,9 @@
           <%= image_tag @user.avatar.url(:medium) %>
         </div>
         <div class="col-xs-8">
-          <p><b>Name: </b><%= @user.first_name %> <%= @user.last_name %></p>
+          <h1><%= @user.first_name %> <%= @user.last_name %></h1>
           <p><b>Email: </b><%= @user.email %></p>
-          <p><b>Current City: </b><%= @user.current_city %></p>
+          <div class="city"><h3><%= @user.current_city %></h3></div>  
           <p><b>Current Position: </b><%= @user.current_position %></p>
           <p><b>Current Employer: </b><%= @user.current_employer %></p>
           <p><b>Seeking Work: </b><%= yesno(@user.seeking_work) %></p>

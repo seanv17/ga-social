@@ -7,9 +7,8 @@
               <%= link_to image_tag(user.avatar.url(:thumb), :class => 'img-circle'), user_path( User.friendly.find(user.id) ) %>
             </div>
             <div class="cl-xs-6 col-md-8 users">
-              <h1><%= link_to "#{user.first_name} #{user.last_name}", user_path( User.friendly.find(user.id) ) %></h1>
-              <h3><%= user.current_position.capitalize %></h3>
-              <div class="city"><h4><%= user.current_city %></h4></div>
+              <h1><%= link_to "#{user.first_name} #{user.last_name}", user_path( User.friendly.find(user.id) ) %></h1><br><br>
+              <div class="city"><h3><%= user.current_city %></h3></div>
               <p><%= fa_icon "briefcase", :class => 'fa-icon' %> <b>Currently </b> <%= user.current_position.capitalize %> at <%= user.current_employer %></p>
               <p><%= fa_icon "briefcase", :class => 'fa-icon' %> <b>Seeking Work: </b><%= yesno(user.seeking_work) %></p>
               <p><%= fa_icon "code", :class => 'fa-icon' %> <b>Tech Preference: </b><%= user.tech_preference %></p>
