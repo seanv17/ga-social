@@ -1,9 +1,6 @@
 <section>
   <div id="postsindex">
     <div class="container">
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: "flash notice" , id:"flash_notice" %>
-    <% end %>
       <h1>GA-Social Posts</h1>
       <%= button_to "Search Posts", search_posts_path, method: 'get', class: 'btn btn-info' %><br>
       <%= button_to "Add New Post", new_post_path, method: 'get', class: 'btn btn-primary' %>
@@ -15,12 +12,12 @@
             <div>
               <!-- truncate post body if it is more than 250 chatacters -->
               <% if post.body.length>250 %>
-                <div title="Click on post to edit">
-                  <!--best_in_place gem enables inline editing  -->
-                  <!-- trunc method is defined in post model method -->
-                  <%= best_in_place post, :body, :as => :textarea, :display_as => :trunc, :ok_button => 'Save', :cancel_button => 'Cancel' %>
-                </div>
-                <%= link_to 'Read more', post_path(post) %>
+                  <div title="Click on post to edit">
+                    <!--best_in_place gem enables inline editing  -->
+                    <!-- trunc method is defined in post model method -->
+                    <%= best_in_place post, :body, :as => :textarea, :display_as => :trunc, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+                    <%= link_to 'Read more', post_path(post) %>
+                  </div>
               <% else %>
                 <div title="Click on post to edit">
                   <%= best_in_place post, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
@@ -46,12 +43,11 @@
               <%= link_to like_post_path(post, like: false), method: :post do %>
               <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= post.thumbs_down_total %>
               <% end %>
-              <%= link_to 'Add a Comment', new_comment_path(post), class: 'btn btn-primary btn-sm' %>
             </div>
               <!-- end of likes -->
-              <!-- end of test that user is authorized to change -->
           <% end %>
           <!-- END OF USER AUTHORIZATION -->
+          <%= link_to 'Add a Comment', new_comment_path(post), class: 'btn btn-primary btn-sm' %>
           <hr>
             <!-- calculate number of comments -->
           <% count = 0 %>

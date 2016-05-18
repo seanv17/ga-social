@@ -25,8 +25,11 @@ class UsersController < ApplicationController
 
   def update
     set_user
-    @user.update_attributes(user_params)
-    flash[:notice] = "User info updated!"
+    if @user.update_attributes(user_params)
+      flash[:notice] = "User information updated successfully"
+    else
+       flash[:error] = @user.errors.full_messages.join(", ")
+    end
     redirect_to user_path(@user)
   end
 
