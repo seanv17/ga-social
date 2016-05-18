@@ -426,7 +426,10 @@
 
   /* Start of comment new view */
   #commentnew {
-    font-family: 'Circular'
+    h1 {
+      font-family: 'PDF_in_Text';
+      text-transform: uppercase;
+    }
   }
 
   /* Start of User edit view */
