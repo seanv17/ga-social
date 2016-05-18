@@ -46,11 +46,10 @@ class PostsController < ApplicationController
     # code for best_in_place gem - inline editing
      respond_to do |format|
        if @post.update_attributes(post_params)
-         flash[:notice] = "Post updated successfully"
-         format.html { redirect_to(@posts, :notice => 'Post updated successfully') }
+         format.html { redirect_to(@posts, flash[:notice] => 'Post updated successfully') }
          format.json { respond_with_bip(@post) }
        else
-         flash[:error] = post.errors.full_messages.join(", ")
+         flash[:error] = @post.errors.full_messages.join(", ")
          format.html { render :action => "edit" }
          format.json { respond_with_bip(@post) }
        end
@@ -75,7 +74,7 @@ class PostsController < ApplicationController
       # call the index method after deleting a post
       index
     else
-      flash[:error] = post.errors.full_messages.join(", ")
+      flash[:error] = @post.errors.full_messages.join(", ")
     end
   end
 

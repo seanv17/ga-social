@@ -30,9 +30,10 @@ class CommentsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to posts_path }
         format.js
-      flash[:success] = 'Your comment was successfully added!'
+      flash[:success] = 'Comment saved successfully'
       end
     else
+      flash[:error] = @comment.errors.full_messages_to_sentence
       render 'new'
     end
   end
@@ -50,13 +51,13 @@ class CommentsController < ApplicationController
 
   def update
     comment = Comment.find_by_id(params[:id])
-#------------best in place---------------------
+#------------code for best_in_place gem - inline editing---------------------
     respond_to do |format|
       if comment.update_attributes(comment_params)
-        p "here inside respond"
-        format.html { redirect_to(comment, :notice => 'comment update was successfully updated.') }
+        format.html { redirect_to(comment, flash[:notice] => 'Comment updated successfully') }
         format.json { respond_with_bip(comment) }
       else
+        flash[:error] = comment.errors.full_messages_to_sentence
         format.html { render :action => "edit" }
         format.json { respond_with_bip(comment) }
       end
@@ -68,10 +69,10 @@ class CommentsController < ApplicationController
     comment.destroy
 
     if comment.destroy
-      flash[:notice] = "Comment deleted"
+      flash[:notice] = "Comment deleted successfully"
       redirect_to posts_path
     else
-      flash[:error] = post.errors.full_messages_to_sentence
+      flash[:error] = comment.errors.full_messages_to_sentence
       redirect_to posts_path
     end
   end
