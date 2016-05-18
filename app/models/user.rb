@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :likes
   has_many :notifications, dependent: :destroy
+  has_many :conversations, :foreign_key => :sender_id
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
