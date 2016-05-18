@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  validates :body, presence: true
+
   def self.search(search)
     where("body LIKE ?", "%#{search}%")
   end
