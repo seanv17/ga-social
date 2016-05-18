@@ -137,8 +137,8 @@
       font-family: 'circular';
       color: gray;
       position: absolute;
-      top: -2px;
-      right: 6px;
+      top: -10px;
+      right: 10px;
     }
 
     img {
@@ -427,4 +427,22 @@
   /* Start of comment new view */
   #commentnew {
     font-family: 'Circular'
+  }
+
+  /* Start of User edit view */
+  #useredit {
+
+    .container {
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'PDF_in_Text';
+      text-transform: uppercase;
+    }
+
+    .form-fields {
+      width: 500px;
+    }
+
   }
