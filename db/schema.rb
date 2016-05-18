@@ -140,6 +140,26 @@ ActiveRecord::Schema.define(version: 20160517062259) do
     t.datetime "avatar_updated_at"
   end
 
+  create_table "table_name", force: :cascade do |t|
+    t.string   "topic"
+    t.text     "body"
+    t.integer  "received_messageable_id"
+    t.string   "received_messageable_type"
+    t.integer  "sent_messageable_id"
+    t.string   "sent_messageable_type"
+    t.boolean  "opened",                     default: false
+    t.boolean  "recipient_delete",           default: false
+    t.boolean  "sender_delete",              default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ancestry"
+    t.boolean  "recipient_permanent_delete", default: false
+    t.boolean  "sender_permanent_delete",    default: false
+  end
+
+  add_index "table_name", ["ancestry"], name: "index_table_name_on_ancestry", using: :btree
+  add_index "table_name", ["sent_messageable_id", "received_messageable_id"], name: "acts_as_messageable_ids", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -168,6 +188,8 @@ ActiveRecord::Schema.define(version: 20160517062259) do
     t.string   "slug"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
 
   add_foreign_key "comments", "posts"

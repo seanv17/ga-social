@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find_by_id(params[:id])
+    redirect_to splash_path
   end
 
   def create
@@ -39,7 +40,6 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find_by_id(params[:id])
     p @comment
-    render :edit
     if current_user == @comment.user
       render :edit
     else
@@ -49,11 +49,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    # post = Post.find(params[:id])
     comment = Comment.find_by_id(params[:id])
-    p "this is the comment" + comment.body
-    # comment.update(comment_params)
-    # redirect_to post_path(params[:post_id])
 #------------best in place---------------------
     respond_to do |format|
       if comment.update_attributes(comment_params)
