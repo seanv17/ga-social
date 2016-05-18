@@ -14,5 +14,5 @@
 
 # Ignore mailer files
 .env
+.env.swp
 Procfile
-
