@@ -12,6 +12,8 @@
               <p><%= fa_icon "briefcase", :class => 'fa-icon' %> <b>Currently </b> <%= user.current_position.split.map(&:capitalize)*' ' %> at <%= user.current_employer %></p>
               <p><%= fa_icon "briefcase", :class => 'fa-icon' %> <b>Seeking Work: </b><%= yesno(user.seeking_work) %></p>
               <p><%= fa_icon "code", :class => 'fa-icon' %> <b>Tech Preference: </b><%= user.tech_preference %></p>
+              <p><%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+                    "data-sid" => current_user.id, "data-rip" => user.id %></p>
             </div>
       </div><br>
       <% end %>

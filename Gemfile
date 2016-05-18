@@ -37,6 +37,10 @@ gem 'font-awesome-rails'
 # bootstrap form helper
 gem 'simple_form'
 
+# allows messaging
+gem 'private_pub'
+gem 'thin'
+
 # friendly_id
 gem 'friendly_id', '~> 5.1'
 

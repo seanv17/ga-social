@@ -1,20 +1,30 @@
 class ConversationsController < ApplicationController
+  before_filter :authenticate_user!
 
-  def index
-    @conversations = current_user.mailbox.conversations
+  layout false
+
+  def create
+    if Conversation.between(params[:sender_id],params[:recipient_id]).present?
+      @conversation = Conversation.between(params[:sender_id],params[:recipient_id]).first
+    else
+      @conversation = Conversation.create!(conversation_params)
+    end
+    render json: { conversation_id: @conversation.id }
   end
 
   def show
-    @conversation = current_user.mailbox.conversations.find(params[:id])
+    @conversation = Conversation.find(params[:id])
+    @reciever = interlocutor(@conversation)
+    @messages = @conversation.messages
+    @message = Message.new
   end
 
-  def new
-    @recipients = User.all - [current_user]
+  private
+  def conversation_params
+    params.permit(:sender_id, :recipient_id)
   end
 
-  def create
-    recipient = User.find(params[:user_id])
-    receipt = current_user.send_message(recipient, params[:body], params[:subject])
-    redirect_to conversation_path(receipt.conversation)
+  def interlocutor(conversation)
+    current_user == conversation.recipient ? conversation.sender : conversation.recipient
   end
 end

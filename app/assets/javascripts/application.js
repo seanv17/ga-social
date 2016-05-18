@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require best_in_place
+//= require chat
+//= require private_pub
 //= require turbolinks
 //= require data-confirm-modal
 //= require bootstrap-sprockets

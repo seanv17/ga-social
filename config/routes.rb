@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'site#splash', as: :splash
+  # root 'site#splash', as: :splash
 
 #-----------------------------USER PATHS----------------------------------------#
   get "/users", to: "users#index", as: :users
@@ -41,9 +41,17 @@ Rails.application.routes.draw do
   get "/notifications", to: "notifications#index", as: :notifications
   get "/notifications/:id/link_through", to: "notifications#link_through", as: :link_through
 
-
-
   # messages path
+  authenticated :user do
+    root 'site#splash', as: :splash
+  end
+
+  unauthenticated :user do
+    devise_scope :user do
+      get "/" => "devise/sessions#new"
+    end
+  end
+
   resources :conversations do
     resources :messages
   end

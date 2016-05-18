@@ -1,0 +1,19 @@
+console.log('outside', "<%= @path %>")
+
+<% publish_to @path do %>
+  console.log("test");
+  var id = "<%= @conversation.id %>";
+  var chatbox = $("#chatbox_" + id + ".chatboxcontent");
+  var sender_id = "<%= @message.user.id %>";
+  var reciever_id = $('meta[name=user-id]').attr("content");
+  chatbox.append("<%= j render( partial: @message ) %>");
+  chatbox.scrollTop(chatbox[0].scrollHeight);
+  debugger
+  if(sender_id != reciever_id){
+    debugger
+  	chatBox.chatWith(id);
+    chatbox.children().last().removeClass("self").addClass("other");
+  	chatbox.scrollTop(chatbox[0].scrollHeight);
+    chatBox.notify();
+  }
+<% end %>

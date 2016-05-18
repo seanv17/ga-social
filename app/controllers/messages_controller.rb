@@ -1,14 +1,18 @@
 class MessagesController < ApplicationController
-  before_action :set_conversation
+  before_filter :authenticate_user!
 
-  def create
-    receipt = current_user.reply_to_conversation(@conversation, params[:body])
-    redirect_to conversation_path(receipt.conversation)
-  end
+ def create
+   @conversation = Conversation.find(params[:conversation_id])
+   @message = @conversation.messages.build(message_params)
+   @message.user_id = current_user.id
+   @message.save!
 
-  private
+   @path = conversation_path(@conversation)
+ end
 
-  def set_conversation
-    @conversation = current_user.mailbox.conversations.find(params[:conversation_id])
-  end
+ private
+
+ def message_params
+   params.require(:message).permit(:body)
+ end
 end
