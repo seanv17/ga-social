@@ -15,9 +15,13 @@ class PostsController < ApplicationController
 
   def new
     if current_user
+      respond_to do |format|
+        format.html
+        format.js
+      end
       @post = Post.new
       @user = current_user
-      render :new
+      # render :new
     else
       redirect_to splash_path
     end

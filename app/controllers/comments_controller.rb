@@ -6,6 +6,11 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new(parent_id: params[:parent_id])
+    respond_to do |format|
+      @comment = Comment.new(parent_id: params[:parent_id])
+      format.html
+      format.js
+    end
   end
 
   def show
