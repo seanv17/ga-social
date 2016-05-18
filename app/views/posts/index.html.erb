@@ -3,10 +3,14 @@
     <div class="container">
       <h1>GA-Social Posts</h1>
       <%= button_to "Search Posts", search_posts_path, method: 'get', class: 'btn btn-info' %><br>
-      <%= button_to "Add New Post", new_post_path, method: 'get', class: 'btn btn-primary' %>
+      <%= link_to 'Add Post with Surprise', new_post_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %>
       <hr>
+      <div id="modal-window" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      </div>
+
         <% for post in @posts do %>
           <b>Posted by: <%=link_to post.user.first_name + " " + post.user.last_name, user_path(post.user)%></b> <span class="quiet"><small><%= time_ago_in_words(post.created_at) %> ago</small></span><br>
+          <%= image_tag post.avatar? ? post.avatar.url(:medium): "" %>
           <% if current_user.id == post.user_id %>
           <!-- post belongs to the current user -->
             <div>
@@ -29,7 +33,7 @@
           <% else %>
           <!-- post does not belong to the current user -->
             <div>
-              <%= image_tag post.avatar? ? post.avatar.url(:medium): "" %><%= post.body.truncate(250) %>
+              <%= post.body.truncate(250) %>
               <% if post.body.length>250 %>
                 <%= link_to 'Read more', post_path(post) %>
               <% end %>
