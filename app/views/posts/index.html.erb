@@ -48,21 +48,24 @@
               <%= link_to 'Add a Comment', new_comment_path(post), class: 'btn btn-primary btn-sm' %>
             </div>
           <% end %>
+          <!-- END OF USER AUTHENTICATION -->
           <hr>
           <% count = 0 %>
-        <% post.comments.all.each do |c|%>
-          <% if c.root?%>
-            <%  count = count + 1%>
-          <% end%>
-        <% end %>
-        <%= pluralize(count.to_s, "comment")%>
-        <% tag = post.comments.all %>
-        <% comments = tag.hash_tree %>
-        <% if comments %>
-          <%= comments_tree_for comments %>
+          <% post.comments.all.each do |c|%>
+            <% if c.root?%>
+              <%  count = count + 1%>
+            <% end%>
+          <% end %>
+          <% if count>0 %>
+            <%= pluralize(count.to_s, "comment")%>
+          <% end %>  
+          <% tag = post.comments.all %>
+          <% comments = tag.hash_tree %>
+          <% if comments %>
+            <%= comments_tree_for comments %>
+          <% end %>
         <% end %>
       <!-- END OF POSTS LOOP -->
-      <% end %>
       <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
       <%= page_entries_info @posts %>
     </div>
