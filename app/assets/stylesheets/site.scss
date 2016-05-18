@@ -113,13 +113,21 @@
 /* Start of user#index view */
   #userindex {
 
+    @media (min-width: 768px) {
+      .container-small {
+        width: 700px;
+        margin: 0 auto;
+      }
+    }
+
     .row {
       border-style: ridge;
-      border-width: .1px;
+      border-width: .3px;
     }
 
     img {
-      width: 100%;
+      height: 150px;
+      margin: 15px;
     }
 
     h1 {
