@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   def new
     if current_user
+      #record new post in notifications
       respond_to do |format|
         format.html
         format.js
@@ -27,13 +28,18 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(post_params)
-    post.user = current_user
-    if post.save
-      flash[:notice] = "Post saved successfully"
+    if post.body.length == 0
+      flash[:error] = "Post cannot be blank"
       redirect_to posts_path
     else
-      flash[:error] = post.errors.full_messages.join(", ")
-      redirect_to new_post_path
+      post.user = current_user
+      if post.save
+        flash[:notice] = "Post saved successfully"
+        redirect_to posts_path
+      else
+        flash[:error] = post.errors.full_messages.join(", ")
+        redirect_to new_post_path
+      end
     end
   end
 
