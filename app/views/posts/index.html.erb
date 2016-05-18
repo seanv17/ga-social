@@ -3,7 +3,8 @@
     <div class="container">
       <h1>GA-Social Posts</h1>
       <%= button_to "Search Posts", search_posts_path, method: 'get', class: 'btn btn-info' %><br>
-      <%= link_to 'Add Post with Surprise', new_post_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %>
+
+      <%= link_to 'Add Post', new_post_path, {:class => 'btn btn-info', :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}%>
       <hr>
       <div id="modal-window" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       </div>
@@ -51,7 +52,7 @@
               <!-- end of likes -->
           <% end %>
           <!-- END OF USER AUTHORIZATION -->
-          <%= link_to 'Add a Comment', new_comment_path(post), class: 'btn btn-primary btn-sm' %>
+          <%= link_to 'Add Comment', new_comment_path(post), {:class => 'btn btn-info', :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}%>
           <hr>
             <!-- calculate number of comments -->
           <% count = 0 %>
