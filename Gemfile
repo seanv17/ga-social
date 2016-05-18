@@ -17,6 +17,7 @@ gem 'bootstrap-modal-rails'
 
 # bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'certified'
 gem 'autoprefixer-rails'
 gem 'closure_tree'
 # Use jquery as the JavaScript library
