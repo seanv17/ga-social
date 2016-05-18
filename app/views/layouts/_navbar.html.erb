@@ -52,7 +52,7 @@
     <% flash.each do |name, msg| %>
       <% if name == "notice"%>
         <strong id="flash-notice"> <%= name.capitalize %>: <%= msg %></strong>
-      <% elsif name == "error" %>
+      <% elsif name == "error" || name == "alert" %>
         <strong id="flash-error"> <%= name.capitalize %>: <%= msg %> </strong>
       <% end %>
     <% end %>
