@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
   def index
-
     if params[:search]
       @posts = Post.order(updated_at: :desc).search(params[:search]).paginate(:page => params[:page], :per_page => 6)
     else
@@ -87,7 +86,7 @@ class PostsController < ApplicationController
       flash[:success] = "You liked post #{@post.id}"
       redirect_to :back
     else
-      flash[:danger] = "You can only like/dislike a posts once"
+      flash[:danger] = "You can only like/dislike a post once"
       redirect_to :back
     end
   end
