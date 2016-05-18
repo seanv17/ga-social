@@ -1,19 +1,15 @@
-<div id="postnew">
-    <h1>Add New Post</h1>
-
-    <%= form_for @post do |f| %>
-      <div class="row">
-        <div class="well col-md-4 col-md-offset-4">
-          <div class="form-group">
-            <%= f.text_area :body, class: "form-control", placeholder: "Body", autofocus: true %>
-          </div>
-          <div>
+<!-- this view is no longer used -->
+<section>
+  <div id="postnew">
+    <div class="container">
+      <h1>Add New Post</h1>
+      <ul class="form-fields">
+        <%= simple_form_for @post do |f| %>
+            <%= f.input :body, class: "form-control", placeholder: "Enter new post...", autofocus: true %>
             <%= f.file_field :avatar %>
-          </div>
-        </div>
-        <div>
-          <center><%= f.submit "Save", class: "btn btn-success" %></center>
-        </div>
-      </div>
-    <% end %>
-</div>
+            <%= f.submit "Save", class: "btn btn-success" %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
