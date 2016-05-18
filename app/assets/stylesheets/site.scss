@@ -300,10 +300,16 @@
 
 }
 
-/* Start of post#index view */
-  #postindex {
+/* Start of posts#index view */
+  #postsindex {
     h1 {
       margin-top: 50px;
+    }
+    #flash-error {
+      color: red;
+    }
+    #flash-notice {
+      color: green;
     }
   }
 

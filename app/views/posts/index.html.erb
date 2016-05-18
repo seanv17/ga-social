@@ -2,7 +2,15 @@
   <div id="postsindex">
     <div class="container">
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: "flash notice" , id:"flash_notice" %>
+      <% if name == "notice"%>
+        <span>
+          <small id="flash-notice"> <%= name.capitalize %>: <%= msg %> </small>
+        </span>
+      <% elsif name == "error" %>
+        <span>
+          <small id="flash-error"> <%= name.capitalize %>: <%= msg %> </small>
+        </span>
+      <% end %>
     <% end %>
       <h1>GA-Social Posts</h1>
       <%= button_to "Serach Posts", search_posts_path, method: 'get', class: 'btn btn-info' %><br>
