@@ -112,6 +112,7 @@
 
 /* Start of user#index view */
   #userindex {
+    font-size: 15px;
 
     @media (min-width: 768px) {
       .container-small {
@@ -123,6 +124,21 @@
     .row {
       border-style: ridge;
       border-width: .3px;
+      -webkit-box-shadow: 0 8px 6px -6px #70010e;
+  	  -moz-box-shadow: 0 8px 6px -6px #70010e;
+  	  box-shadow: 0 8px 6px -6px #70010e;
+    }
+
+    .users {
+      position: relative;
+    }
+
+    .city {
+      font-family: 'circular';
+      color: gray;
+      position: absolute;
+      top: -2px;
+      right: 6px;
     }
 
     img {
@@ -132,7 +148,19 @@
 
     h1 {
       margin-top: -3px;
+      margin-bottom: -25px;
       color: black;
+      padding-top: 10px;
+      text-transform: uppercase;
+      font-family: 'PDF_in_Text'
+    }
+
+    .fa-icon {
+      color: navy;
+    }
+
+    h3 {
+      font-family: "News_706"
     }
 
     a {
