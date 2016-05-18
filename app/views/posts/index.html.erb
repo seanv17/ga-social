@@ -51,7 +51,8 @@
               <!-- end of likes -->
               <!-- end of test that user is authorized to change -->
           <% end %>
-
+          <!-- END OF USER AUTHORIZATION -->
+          <hr>
             <!-- calculate number of comments -->
           <% count = 0 %>
           <% post.comments.all.each do |c|%>
@@ -59,17 +60,20 @@
               <%  count = count + 1%>
             <% end%>
           <% end %>
-          <%= pluralize(count.to_s, "comment")%>
+          <% if count>0 %>
+            <%= pluralize(count.to_s, "comment")%>
+          <% end %>
           <% tag = post.comments.all %>
           <% comments = tag.hash_tree %>
-                    <hr>
+          <hr>
           <!-- call the comments partial which is rendered by the closure_tree gem -->
           <% if comments %>
-            <%= comments_tree_for comments %> <!-- this is the special way that closure_tree gem does the partial -->
+            <!-- this is the special way that closure_tree gem does the partial -->
+            <%= comments_tree_for comments %>
           <% end %>
-      <!-- END OF POSTS LOOP -->
         <% end %>
-        <!-- uses the will_paginate bootstrap gem -->
+      <!-- END OF POSTS LOOP -->
+      <!-- uses the will_paginate bootstrap gem -->
       <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
       <%= page_entries_info @posts %>
     </div>
