@@ -64,6 +64,7 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    certified (1.0.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     closure_tree (6.0.0)
@@ -232,6 +233,7 @@ DEPENDENCIES
   best_in_place (~> 3.0.1)
   bootstrap-modal-rails
   bootstrap-sass (~> 3.2.0)
+  certified
   closure_tree
   coffee-rails (~> 4.1.0)
   data-confirm-modal!
@@ -258,4 +260,4 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 BUNDLED WITH
-   1.12.3
+   1.12.4

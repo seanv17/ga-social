@@ -183,7 +183,7 @@
 
 /* All sign-in related background */
 #background {
-  background-image: url(signin-background.jpeg);
+  background: url("signin-background.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
@@ -241,7 +241,7 @@
   }
 
   #office {
-    background-image: url(office-background.jpg);
+    background: url("office-background.jpg");
     background-size: cover;
     height: 481px;
     align-items: center;
@@ -274,7 +274,7 @@
   }
 
   #whiteboard {
-    background-image: url(whiteboard.jpg);
+    background: url("whiteboard.jpg");
     background-size: cover;
     background-color: rgba(128,0,0,.5);
     margin-top: -20px;
@@ -282,7 +282,7 @@
   }
 
   #class {
-    background-image: url(class.jpg);
+    background: url("class.jpg");
     background-size: cover;
     margin-top: 1px;
     margin-left: -14px
