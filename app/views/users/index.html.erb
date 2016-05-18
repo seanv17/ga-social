@@ -9,7 +9,12 @@
             <div class="cl-xs-6 col-md-8 users">
               <h1><%= link_to "#{user.first_name} #{user.last_name}", user_path( User.friendly.find(user.id) ) %></h1><br><br>
               <div class="city"><h3><%= user.current_city %></h3></div>
-              <p><%= fa_icon "briefcase", :class => 'fa-icon' %> <b>Currently </b> <%= user.current_position.split.map(&:capitalize)*' ' %> at <%= user.current_employer %></p>
+              <p><%= fa_icon "briefcase", :class => 'fa-icon' %> <b>Currently </b>
+              <% if user.current_employer == nil || user.current_position == nil %>
+                <%= "On the beach" %>
+              <% else %>
+                <%= user.current_position.split.map(&:capitalize)*' ' %> at <%= user.current_employer %></p>
+              <% end %>
               <p><%= fa_icon "briefcase", :class => 'fa-icon' %> <b>Seeking Work: </b><%= yesno(user.seeking_work) %></p>
               <p><%= fa_icon "code", :class => 'fa-icon' %> <b>Tech Preference: </b><%= user.tech_preference %></p>
             </div>
