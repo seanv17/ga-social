@@ -27,8 +27,10 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     post.user = current_user
     if post.save
+      flash[:notice] = "Post saved successfully"
       redirect_to posts_path
     else
+      flash[:error] = post.errors.full_messages.join(", ")
       redirect_to new_post_path
     end
   end
@@ -37,7 +39,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = current_user
     render :edit
-
   end
 
   def update
@@ -45,9 +46,10 @@ class PostsController < ApplicationController
     # code for best_in_place gem - inline editing
      respond_to do |format|
        if @post.update_attributes(post_params)
-         format.html { redirect_to(@posts, :notice => 'post was successfully updated.') }
+         format.html { redirect_to(@posts, flash[:notice] => 'Post updated successfully') }
          format.json { respond_with_bip(@post) }
        else
+         flash[:error] = @post.errors.full_messages.join(", ")
          format.html { render :action => "edit" }
          format.json { respond_with_bip(@post) }
        end
@@ -67,8 +69,13 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    index
+    if @post.destroy
+      flash[:notice] = "Post deleted successfully"
+      # call the index method after deleting a post
+      index
+    else
+      flash[:error] = @post.errors.full_messages.join(", ")
+    end
   end
 
   def like
@@ -83,13 +90,10 @@ class PostsController < ApplicationController
     end
   end
 
-
-
   private
 
   def post_params
     params.require(:post).permit(:body, :user_id, :avatar)
   end
-
 
 end
