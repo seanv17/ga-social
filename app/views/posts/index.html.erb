@@ -15,12 +15,12 @@
             <div>
               <!-- truncate post body if it is more than 250 chatacters -->
               <% if post.body.length>250 %>
-                <div title="Click on post to edit">
-                  <!--best_in_place gem enables inline editing  -->
-                  <!-- trunc method is defined in post model method -->
-                  <%= best_in_place post, :body, :as => :textarea, :display_as => :trunc, :ok_button => 'Save', :cancel_button => 'Cancel' %>
-                </div>
-                <%= link_to 'Read more', post_path(post) %>
+                  <div title="Click on post to edit">
+                    <!--best_in_place gem enables inline editing  -->
+                    <!-- trunc method is defined in post model method -->
+                    <%= best_in_place post, :body, :as => :textarea, :display_as => :trunc, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+                    <%= link_to 'Read more', post_path(post) %>
+                  </div>
               <% else %>
                 <div title="Click on post to edit">
                   <%= best_in_place post, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
