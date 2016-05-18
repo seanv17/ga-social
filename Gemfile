@@ -26,7 +26,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+#authorization and automation
 gem 'devise'
 #best_in_place enables inline editing
 gem 'best_in_place', '~> 3.0.1'
@@ -37,6 +37,15 @@ gem 'font-awesome-rails'
 # bootstrap form helper
 gem 'simple_form'
 
+# friendly_id
+gem 'friendly_id', '~> 5.1'
+
+# Calls on bootstrap modals through rails' :confirm attributes
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+
+# messaging app
+gem 'mailboxer', '~> 0.13.0'
+#storing and retrieving files
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

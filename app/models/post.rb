@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   has_many :likes
+  has_many :notifications, dependent: :destroy
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
 
@@ -18,6 +19,10 @@ class Post < ActiveRecord::Base
 
   def thumbs_down_total
     self.likes.where(like: false).size
+  end
+
+  def trunc
+    self.body.truncate(250)
   end
 
 end
