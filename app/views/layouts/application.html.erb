@@ -10,7 +10,17 @@
 <body>
 
   <%= render 'layouts/navbar' %>
-
+  <h1><% flash.each do |name, msg| %>
+    <% if name == "notice"%>
+      <strong>
+        <small id="flash-notice"> <%= name.capitalize %>: <%= msg %> </small>
+      </strong>
+    <% elsif name == "error" %>
+      <strong>
+        <small id="flash-error"> <%= name.capitalize %>: <%= msg %> </small>
+      </strong>
+    <% end %>
+  <% end %></h1>
   <%= yield %>
 </body>
 </html>

@@ -26,11 +26,11 @@ class CommentsController < ApplicationController
     end
 
     if @comment.save
+      flash[:notice] = 'Comment added successfully'
       create_notification @comment
       respond_to do |format|
         format.html { redirect_to posts_path }
         format.js
-      flash[:success] = 'Comment saved successfully'
       end
     else
       flash[:error] = @comment.errors.full_messages_to_sentence
