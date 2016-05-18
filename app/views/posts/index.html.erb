@@ -5,7 +5,7 @@
       <%= content_tag :div, msg, class: "flash notice" , id:"flash_notice" %>
     <% end %>
       <h1>GA-Social Posts</h1>
-      <%= button_to "Serach Posts", search_posts_path, method: 'get', class: 'btn btn-info' %><br>
+      <%= button_to "Search Posts", search_posts_path, method: 'get', class: 'btn btn-info' %><br>
       <%= button_to "Add New Post", new_post_path, method: 'get', class: 'btn btn-primary' %>
       <hr>
         <% for post in @posts do %>
@@ -37,6 +37,7 @@
                 <%= link_to 'Read more', post_path(post) %>
               <% end %>
             </div>
+            <!-- likes -->
             <div class="likes pull-right">
               <%= link_to like_post_path(post, like: true), method: :post do %>
               <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= post.thumbs_up_total %>
@@ -47,9 +48,12 @@
               <% end %>
               <%= link_to 'Add a Comment', new_comment_path(post), class: 'btn btn-primary btn-sm' %>
             </div>
+              <!-- end of likes -->
+              <!-- end of test that user is authorized to change -->
           <% end %>
-          <!-- END OF USER AUTHENTICATION -->
+          <!-- END OF USER AUTHORIZATION -->
           <hr>
+            <!-- calculate number of comments -->
           <% count = 0 %>
           <% post.comments.all.each do |c|%>
             <% if c.root?%>
@@ -58,14 +62,18 @@
           <% end %>
           <% if count>0 %>
             <%= pluralize(count.to_s, "comment")%>
-          <% end %>  
+          <% end %>
           <% tag = post.comments.all %>
           <% comments = tag.hash_tree %>
+          <hr>
+          <!-- call the comments partial which is rendered by the closure_tree gem -->
           <% if comments %>
+            <!-- this is the special way that closure_tree gem does the partial -->
             <%= comments_tree_for comments %>
           <% end %>
         <% end %>
       <!-- END OF POSTS LOOP -->
+      <!-- uses the will_paginate bootstrap gem -->
       <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
       <%= page_entries_info @posts %>
     </div>
