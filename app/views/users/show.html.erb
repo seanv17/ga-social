@@ -7,13 +7,12 @@
           <%= image_tag @user.avatar.url(:medium) %>
         </div>
         <div class="col-xs-8">
-          <p><b>Name: </b><%= @user.first_name %> <%= @user.last_name %></p>
-          <p><b>Email: </b><%= @user.email %></p>
-          <p><b>Current City: </b><%= @user.current_city %></p>
-          <p><b>Current Position: </b><%= @user.current_position %></p>
-          <p><b>Current Employer: </b><%= @user.current_employer %></p>
-          <p><b>Seeking Work: </b><%= yesno(@user.seeking_work) %></p>
-          <p><b>Technology Preference: </b><%= @user.tech_preference %></p>
+          <h1><%= @user.first_name %> <%= @user.last_name %></h1><hr />
+          <h3><%= fa_icon "envelope", :class => 'fa-icon' %> <%= @user.email %></h3>
+          <div class="city"><h3><%= @user.current_city %></h3></div>
+          <h3><%= fa_icon "briefcase", :class => 'fa-icon' %> <b>Currently</b> <%= @user.current_position %> at <%= @user.current_employer %></h3>
+          <h3><%= fa_icon "briefcase", :class => 'fa-icon' %> <b>Seeking Work: </b><%= yesno(@user.seeking_work) %></h3>
+          <h3><%= fa_icon "code", :class => 'fa-icon' %> <b>Technology Preference: </b><%= @user.tech_preference %></h3>
         </div>
       </div>
       <br />
