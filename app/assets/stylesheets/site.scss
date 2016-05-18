@@ -428,3 +428,21 @@
   #commentnew {
     font-family: 'Circular'
   }
+
+  /* Start of User edit view */
+  #useredit {
+
+    .container {
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'PDF_in_Text';
+      text-transform: uppercase;
+    }
+
+    .form-fields {
+      width: 500px;
+    }
+
+  }
