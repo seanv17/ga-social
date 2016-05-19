@@ -6,7 +6,7 @@
       <ul class="form-fields">
         <%= simple_form_for @post do |f| %>
             <%= f.input :body, class: "form-control", placeholder: "Enter new post...", autofocus: true %>
-            <%= f.file_field :avatar %>
+            <%= f.file_field :image %>
             <%= f.submit "Save", class: "btn btn-success" %>
         <% end %>
       </ul>

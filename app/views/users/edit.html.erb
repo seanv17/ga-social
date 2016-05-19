@@ -4,7 +4,11 @@
       <h1>Edit Profile</h1>
       <ul class="form-fields">
         <%= simple_form_for @user do |f| %>
-            <%= f.input :avatar %>
+          <input type="hidden" role="uploadcare-uploader" name="user[image]"
+           value="<%= @user.image %>"
+           data-crop="disabled"
+           data-preview-step="true"
+           data-images-only="true" />
             <%= f.input :first_name, class: "form-control", placeholder: "First name", autofocus: true %>
             <%= f.input :last_name, class: "form-control", placeholder: "Last name", autofocus: true %>
             <%= f.input :email, class: "form-control", placeholder: "Email", autofocus: true %>

@@ -8,7 +8,7 @@
       <div id="modal-window" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
         <% for post in @posts do %>
           <b>Posted by: <%=link_to post.user.first_name + " " + post.user.last_name, user_path(post.user)%></b> <span class="quiet"><small><%= time_ago_in_words(post.created_at) %> ago</small></span><br>
-          <%= image_tag post.avatar? ? post.avatar.url(:medium): "" %>
+          <%= image_tag post.image? ? post.image: "" %>
           <% if current_user.id == post.user_id %>
           <!-- post belongs to the current user -->
             <div>

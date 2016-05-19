@@ -9,7 +9,11 @@
           <%= f.text_area :body, class: "form-control", placeholder: "Body", autofocus: true %>
         </div>
         <div>
-          <%= f.file_field :avatar %>
+          <input type="hidden" role="uploadcare-uploader" name="post[image]"
+           value="<%= @post.image %>"
+           data-crop="disabled"
+           data-preview-step="true"
+           data-images-only="true" />
         </div>
       <div>
         <center><%= f.submit "Save", class: "btn btn-success" %></center>
