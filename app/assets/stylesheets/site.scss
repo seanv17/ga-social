@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* Start of Splash */
+/*--------------------------------- NAVBAR -----------------------------------*/
 #mainNav {
 
   #notifications {
@@ -102,21 +102,21 @@
     border-width: 7px;
   }
 
-} /*closes navbar*/
-
-#flash-error {
-  color: red;
-}
-#flash-notice {
-  color: green;
 }
 
-/*global variables*/
+/*--------------------------------- GLOBALS ----------------------------------*/
   section {
       padding-top: 100px;
   }/*closes variables*/
 
-/* Start of user#index view */
+  #flash-error {
+    color: red;
+  }
+  #flash-notice {
+    color: green;
+  }
+
+/*--------------------------- START of USER INDEX ----------------------------*/
   #userindex {
     font-size: 15px;
 
@@ -181,9 +181,9 @@
 
   }
 
-/* All sign-in related background */
+/*------------------------- SIGN IN OUT BACKGROUND ---------------------------*/
 #background {
-  background: url("signin-background.jpeg");
+  background: image-url("signin-background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
@@ -195,7 +195,7 @@
   padding-top: -10px;
 }
 
-/* Start of sign in view */
+/*-------------------------- START of SIGN IN VIEW ---------------------------*/
 #signin {
   position: absolute;
   width: 370px;
@@ -223,9 +223,9 @@
   }
 }
 
-/* Start of splash view */
+/*-------------------------- START of SPLASH VIEW ----------------------------*/
 #splash {
-  margin-top: 54px;
+  margin-top: -3px;
   text-align: center;
 
   #office-blurb {
@@ -241,9 +241,9 @@
   }
 
   #office {
-    background: url("office-background.jpg");
+    background: image-url("office-background.jpg");
     background-size: cover;
-    height: 481px;
+    height: 501px;
     align-items: center;
   }
 
@@ -274,15 +274,14 @@
   }
 
   #whiteboard {
-    background: url("whiteboard.jpg");
+    background: image-url("whiteboard.jpg");
     background-size: cover;
     background-color: rgba(128,0,0,.5);
-    margin-top: -20px;
     margin-left: -14px
   }
 
   #class {
-    background: url("class.jpg");
+    background: image-url("class.jpg");
     background-size: cover;
     margin-top: 1px;
     margin-left: -14px
@@ -303,22 +302,20 @@
     height: 330px;
     align: left;
 
-  .instructors {
-    display: inline-block;
-    padding: 10px;
-  }
+    .instructors {
+      display: inline-block;
+      padding: 10px;
+    }
 
-  h4 {
-    font-color: black;
-    padding-top: 45px;
+    h4 {
+      font-color: black;
+      padding-top: 45px;
+    }
   }
 
 }
 
-/* End of Splash view */
-}
-
-/* Start of user#show view */
+/*--------------------------- START of USER SHOW -----------------------------*/
   #usershow {
 
     .row {
@@ -367,7 +364,7 @@
   /* comments on comments indentation */
   .replies {margin-left: 50px;}
 
-/* Start of notifications#index view */
+/*---------------------- START of NOTIFICATIONS INDEX ------------------------*/
 #notificationsindex {
   background-color: white;
 
@@ -384,21 +381,52 @@
 
 }
 
-/* Start of post#index view */
-  #postindex {
+/*--------------------------- START of POST INDEX ----------------------------*/
+  #postsindex {
     h1 {
-      margin-top: 50px;
+      margin-top: -20px;
+      font-size: 60px;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: "PDF_in_Text";
     }
+
+    .fa-trash {
+      color: red;
+      font-size: 1.3em;
+    }
+
+    .fa-pencil-square {
+      color: green;
+      font-size: 1.2em;
+    }
+
+    .fa-pencil-square-o {
+      font-size: 1.2em;
+    }
+
+    #search {
+      font-size: 1.2em;
+    }
+
+    #spost {
+      font-size: 1.2em;
+    }
+
+    .postrows {
+      margin: 2px;
+    }
+
   }
 
-/* Start of post#new view */
+/*--------------------------- START of POST NEW ------------------------------*/
   #postnew {
     h1 {
       margin-top: 50px;
     }
   }
 
-  /* Start of sign in view */
+/*--------------------------- START of PASSWORD NEW ---------------------------*/
   #passwordnew {
     position: absolute;
     width: 370px;
@@ -430,12 +458,12 @@
 
   }
 
-  /* Start of comment new view */
+/*-------------------------- START of COMMENT NEW ----------------------------*/
   #commentnew {
     font-family: 'Circular'
   }
 
-  /* Start of User edit view */
+/*--------------------------- START of USER EDIT -----------------------------*/
   #useredit {
 
     .container {
@@ -452,3 +480,96 @@
     }
 
   }
+
+  /*--------------------------- START of ABOUT US ----------------------------*/
+    #aboutus {
+      font-size: 15px;
+
+      @media (min-width: 768px) {
+        .container-small {
+          width: 700px;
+          margin: 0 auto;
+        }
+      }
+
+      .row {
+        border-style: ridge;
+        border-width: .3px;
+        -webkit-box-shadow: 0 8px 6px -6px #70010e;
+    	  -moz-box-shadow: 0 8px 6px -6px #70010e;
+    	  box-shadow: 0 8px 6px -6px #70010e;
+      }
+
+      img {
+        height: 150px;
+        margin: 15px;
+      }
+
+      h1 {
+        margin-top: -3px;
+        margin-bottom: -25px;
+        color: black;
+        padding-top: 10px;
+        text-transform: uppercase;
+        font-family: 'PDF_in_Text'
+      }
+
+      #title {
+        margin-top: -80px;
+        margin-bottom: 40px;
+        font-family: "PDF_in_Text";
+        font-size: 70px;
+        text-align: center;
+      }
+
+    }
+
+/*-------------------------- START of CONVO INDEX ----------------------------*/
+#conversationsindex {
+  background-color: white;
+
+  h1 {
+    font-family: "PDF_in_Text";
+    text-transform: uppercase;
+    font-size: 55px;
+  }
+
+  #conversations {
+    margin-top: 1em;
+    list-style: none;
+  }
+
+  li {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: beige;
+    width: 500px;
+  }
+
+}
+
+/*-------------------------- START of CONVO SHOW -----------------------------*/
+#conversationsshow {
+
+  textarea {
+    width: 400px;
+    height: 100px;
+  }
+
+}
+
+/*------------------------- START of CONVO NEW -------------------------------*/
+#conversationsnew {
+
+  h1 {
+    font-family: "PDF_in_Text";
+    text-transform: uppercase;
+    font-size: 55px;
+  }
+
+  textarea {
+    width: 400px;
+    height: 100px;
+  }
+
+}
