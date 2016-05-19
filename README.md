@@ -21,6 +21,7 @@
 ####7. Friendly Ids
 ####8. Sorting posts by most recent activity (including comments)
 ####9. Truncation and Readmore
+####10. Modals
 
 ##Gems Used
 1. Friendly_id
@@ -32,12 +33,16 @@
 7. Paperclip
 8. will_paginate_bootstrap
 9. data-confirm-modal
+10. bootstrap-modal
 
 ##Application Flow
   ![alt text](GA Social App Flow.png)
 
+##ER Diagram
+  ![alt text](GA Social ER Diagram.png)
+
 ##Team Members
-Hila Vaisler
-Bob Kliger
-Sean Van Ho
-Sam Huang
+1.  Hila Vaisler
+2. Bob Kliger
+3. Sean Van Ho
+4. Sam Huang
