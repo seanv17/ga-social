@@ -49,7 +49,6 @@ gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 gem 'mailboxer', '~> 0.13.0'
 #storing and retrieving files
 
-
 #Hiding Keys
 gem 'dotenv', '~> 2.1', '>= 2.1.1'
 
