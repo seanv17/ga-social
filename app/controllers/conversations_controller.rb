@@ -1,5 +1,6 @@
 class ConversationsController < ApplicationController
 
+
   def index
     @conversations = current_user.mailbox.conversations
   end
@@ -15,6 +16,11 @@ class ConversationsController < ApplicationController
   def create
     recipient = User.find(params[:user_id])
     receipt = current_user.send_message(recipient, params[:body], params[:subject])
-    redirect_to conversation_path(receipt.conversation)
+    if (receipt.errors.blank?)
+      alert = "success"
+      redirect_to conversations_path
+    else
+      redirect_to conversation_path(receipt.conversation)
+  end
   end
 end

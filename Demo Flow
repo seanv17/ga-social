@@ -1,0 +1,37 @@
+Demo flow
+
+Discuss Splash Page
+Show that you can’t do much without logging in
+
+Explain how people would get invitations with a password
+
+Login as Alden King alden@gmail.com
+Show profile
+Edit profile – friendly-ids
+Change password
+View Cohort List
+
+How do we stay in touch – through the posts page
+Notice the pagination, pluralization
+Create a post – include photo – notice the modal
+Notice that it sorts, most recent activity first
+Show inline text editing. Make the text long
+
+Log in as Rob Kniaz rob@gmail.com
+Comment on the post that was just created – notice modal
+Note the read more on the post
+Also like – one like per person
+
+Login as Alden King alden@gmail.com
+See that there is a notification. Select notification and go to view the conversation thread.
+
+Log in as Rob Kniaz rob@gmail.com.
+See the notification
+Reply to the comment – see the indentation
+Add multiple repies
+Search posts and comments
+
+Messages
+Create a message to Alden
+Login as Alden
+See the message and reply
