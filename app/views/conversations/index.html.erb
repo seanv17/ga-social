@@ -5,12 +5,11 @@
       <!-- Modal for new comment -->
       <div id="modal-window" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
       <% for conversation in @conversations %>
-        <% conversation.participants.each do |participant| %>
+        <% recipient = conversation.participants.find { |p| p != current_user } %>
         <li id="conversations">
-          <b>From: </b> <%= participant.first_name %> <%= participant.last_name %><br>
+          <b>Message with: </b> <%= recipient.first_name %> <%= recipient.last_name %><br>
           <b>Topic: </b><%= link_to conversation.subject, conversation_path(conversation) %>
         </li>
-        <% end %>
       <% end %><br>
       <%= link_to "<i class='fa fa-pencil-square-o'></i> Start New Conversation".html_safe, new_conversation_path, :class => 'btn btn-info' %>
     </div>
