@@ -383,8 +383,7 @@
 }
 
 /*--------------------------- START of POST INDEX ----------------------------*/
-/* Start of post#index view */
-  #postindex {
+  #postsindex {
     h1 {
       margin-top: -20px;
       font-size: 60px;
@@ -482,3 +481,46 @@
     }
 
   }
+
+  /*--------------------------- START of ABOUT US ----------------------------*/
+    #aboutus {
+      font-size: 15px;
+
+      @media (min-width: 768px) {
+        .container-small {
+          width: 700px;
+          margin: 0 auto;
+        }
+      }
+
+      .row {
+        border-style: ridge;
+        border-width: .3px;
+        -webkit-box-shadow: 0 8px 6px -6px #70010e;
+    	  -moz-box-shadow: 0 8px 6px -6px #70010e;
+    	  box-shadow: 0 8px 6px -6px #70010e;
+      }
+
+      img {
+        height: 150px;
+        margin: 15px;
+      }
+
+      h1 {
+        margin-top: -3px;
+        margin-bottom: -25px;
+        color: black;
+        padding-top: 10px;
+        text-transform: uppercase;
+        font-family: 'PDF_in_Text'
+      }
+
+      #title {
+        margin-top: -80px;
+        margin-bottom: 40px;
+        font-family: "PDF_in_Text";
+        font-size: 70px;
+        text-align: center;
+      }
+
+    }
