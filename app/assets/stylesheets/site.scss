@@ -335,7 +335,7 @@ section {
 
 /*----------------------------- START of SPLASH ------------------------------*/
 #splash {
-  margin-top: 54px;
+  margin-top: -3px;
   text-align: center;
 
   #office-blurb {
@@ -353,7 +353,7 @@ section {
   #office {
     background-image: url(office-background.jpg);
     background-size: cover;
-    height: 481px;
+    height: 501px;
     align-items: center;
   }
 
@@ -387,7 +387,6 @@ section {
     background-image: url(whiteboard.jpg);
     background-size: cover;
     background-color: rgba(128,0,0,.5);
-    margin-top: -20px;
     margin-left: -14px
   }
 
