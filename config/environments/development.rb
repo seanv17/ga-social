@@ -44,7 +44,7 @@ Rails.application.configure do
       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       s3_region: nil
     }
-  } 
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
