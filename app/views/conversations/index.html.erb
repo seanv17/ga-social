@@ -3,9 +3,12 @@
     <div class="container">
       <h1> Current Conversations </h1>
       <% for conversation in @conversations %>
-        <li id="conversations"><%= link_to conversation.subject, conversation_path(conversation) %></li>
-      <% end %>
-      <%= link_to "new conversations", new_conversation_path %>
+        <li id="conversations">
+          <b>Sender: </b> Sender name<br>
+          <b>Topic: </b><%= link_to conversation.subject, conversation_path(conversation) %>
+        </li>
+      <% end %><br>
+      <%= link_to "<i class='fa fa-pencil-square-o'></i> Start New Conversation".html_safe, new_conversation_path, :class => 'btn btn-info' %>
     </div>
   </div>
 </section>
