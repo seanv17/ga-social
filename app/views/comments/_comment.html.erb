@@ -1,6 +1,6 @@
 <div class="section replies">
   <p class="text-muted">Added by <%= comment.user.first_name %> <%= comment.user.last_name %> on
-    <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
+    <%= l((comment.created_at-7.hours), format: '%B, %d %Y %H:%M:%S') %></p>
     <% if comment.user == current_user %>
       <div title="Click to edit">
         <%= best_in_place comment, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
