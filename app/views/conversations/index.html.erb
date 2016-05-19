@@ -2,6 +2,8 @@
   <div id="conversationsindex">
     <div class="container">
       <h1> Current Conversations </h1>
+      <!-- Modal for new comment -->
+      <div id="modal-window" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
       <% for conversation in @conversations %>
         <li id="conversations">
           <b>Sender: </b> Sender name<br>
