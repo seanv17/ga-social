@@ -2,7 +2,235 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* Start of Splash */
+/*----------------------------------- globals --------------------------------*/
+section {
+  padding-top: 100px;
+}
+
+/* comments on comments indentation */
+.replies {margin-left: 50px;}
+
+/*---------------------------- CUSTOM BACKGROUND -----------------------------*/
+#background {
+  background-image: url(signin-background.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh;
+  padding-top: -10px;
+}
+
+/*------------------------------ START of SIGN IN ----------------------------*/
+#signin {
+  position: absolute;
+  width: 370px;
+  margin: 0 auto;
+  vertical-align: middle;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: inset 0 0 0 1000px rgba(255,255,255,.92);
+
+  margin: -185px 0 0 -185px;
+  left: 50%;
+  top: 50%;
+
+  .form-fields {
+    align-items: center;
+    width: 255px;
+  }
+
+  .col-xs-3 {
+    width: 255px;
+  }
+
+  .btn-primary {
+    width: 216px;
+  }
+}
+
+/*--------------------------- START of PASSWORD NEW --------------------------*/
+  #passwordnew {
+    position: absolute;
+    width: 370px;
+    margin: 0 auto;
+    vertical-align: middle;
+    border-radius: 10px;
+    padding: 40px;
+
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,.92);
+    margin: -185px 0 0 -185px;
+    left: 50%;
+    top: 50%;
+
+    h4 {
+      font-family: 'Circular'
+    }
+
+    .form-fields {
+      width: 255px;
+    }
+
+    .col-xs-3 {
+      width: 255px;
+    }
+
+    .btn-primary {
+      width: 216px;
+    }
+
+  }
+
+/*---------------------------- START of USER SHOW ----------------------------*/
+  #usershow {
+
+    .row {
+      border-style: ridge;
+      border-width: .3px;
+      -webkit-box-shadow: 0 15px 6px -6px #70010e;
+  	  -moz-box-shadow: 0 15px 6px -6px #70010e;
+  	  box-shadow: 0 15px 6px -6px #70010e;
+    }
+
+    hr {
+    align-self: center;
+    border: 0;
+    height: 5px;
+    // background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    h1 {
+      font-family: "PDF_in_Text";
+      text-transform: uppercase;;
+    }
+
+    .city {
+      font-family: 'circular';
+      color: gray;
+      position: absolute;
+      top: -10px;
+      right: 10px;
+    }
+
+    .fa-icon {
+      color: navy;
+    }
+
+    a {
+      color: white;
+    }
+
+  }
+
+/*---------------------------- START of USER INDEX ---------------------------*/
+#userindex {
+  font-size: 15px;
+
+  @media (min-width: 768px) {
+    .container-small {
+      width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .row {
+    border-style: ridge;
+    border-width: .3px;
+    -webkit-box-shadow: 0 8px 6px -6px #70010e;
+    -moz-box-shadow: 0 8px 6px -6px #70010e;
+    box-shadow: 0 8px 6px -6px #70010e;
+  }
+
+  .users {
+    position: relative;
+  }
+
+  .city {
+    font-family: 'circular';
+    color: gray;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+  }
+
+  img {
+    height: 150px;
+    margin: 15px;
+  }
+
+  h1 {
+    margin-top: -3px;
+    margin-bottom: -25px;
+    color: black;
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-family: 'PDF_in_Text'
+  }
+
+  .fa-icon {
+    color: navy;
+  }
+
+  h3 {
+    font-family: "News_706"
+  }
+
+  a {
+    color: black;
+  }
+
+  a:hover,
+  a:focus {
+    color: black;
+    font-color: black;
+  }
+
+}
+
+/*-------------------------- START of USER EDIT ------------------------------*/
+  #useredit {
+
+    .container {
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'PDF_in_Text';
+      text-transform: uppercase;
+    }
+
+    .form-fields {
+      width: 500px;
+    }
+
+  }
+
+  #postnew {
+
+    .container {
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'PDF_in_Text';
+      text-transform: uppercase;
+    }
+
+    .form-fields {
+      width: 500px;
+    }
+
+  }
+
+/*---------------------------- START of NAVBAR -------------------------------*/
 #mainNav {
 
   #notifications {
@@ -76,12 +304,13 @@
   .page-scroll {
     position: fixed;
     left: 50px;
+    top: 4px;
   }
 
   .brand {
     position: fixed;
     width: 30px;
-    top: 10px;
+    top: 13px;
     left: 15px;
   }
 
@@ -102,128 +331,9 @@
     border-width: 7px;
   }
 
-} /*closes navbar*/
-
-#flash-error {
-  color: red;
-}
-#flash-notice {
-  color: green;
 }
 
-/*global variables*/
-  section {
-      padding-top: 100px;
-  }/*closes variables*/
-
-/* Start of user#index view */
-  #userindex {
-    font-size: 15px;
-
-    @media (min-width: 768px) {
-      .container-small {
-        width: 700px;
-        margin: 0 auto;
-      }
-    }
-
-    .row {
-      border-style: ridge;
-      border-width: .3px;
-      -webkit-box-shadow: 0 8px 6px -6px #70010e;
-  	  -moz-box-shadow: 0 8px 6px -6px #70010e;
-  	  box-shadow: 0 8px 6px -6px #70010e;
-    }
-
-    .users {
-      position: relative;
-    }
-
-    .city {
-      font-family: 'circular';
-      color: gray;
-      position: absolute;
-      top: -10px;
-      right: 10px;
-    }
-
-    img {
-      height: 150px;
-      margin: 15px;
-    }
-
-    h1 {
-      margin-top: -3px;
-      margin-bottom: -25px;
-      color: black;
-      padding-top: 10px;
-      text-transform: uppercase;
-      font-family: 'PDF_in_Text'
-    }
-
-    .fa-icon {
-      color: navy;
-    }
-
-    h3 {
-      font-family: "News_706"
-    }
-
-    a {
-      color: black;
-    }
-
-    a:hover,
-    a:focus {
-      color: black;
-      font-color: black;
-    }
-
-  }
-
-/* All sign-in related background */
-#background {
-  background: url("signin-background.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height:100vh;
-  padding-top: -10px;
-}
-
-/* Start of sign in view */
-#signin {
-  position: absolute;
-  width: 370px;
-  margin: 0 auto;
-  vertical-align: middle;
-  border-radius: 10px;
-  padding: 40px;
-  box-shadow: inset 0 0 0 1000px rgba(255,255,255,.92);
-
-  margin: -185px 0 0 -185px;
-  left: 50%;
-  top: 50%;
-
-  .form-fields {
-    align-items: center;
-    width: 255px;
-  }
-
-  .col-xs-3 {
-    width: 255px;
-  }
-
-  .btn-primary {
-    width: 216px;
-  }
-}
-
-/* Start of splash view */
+/*----------------------------- START of SPLASH ------------------------------*/
 #splash {
   margin-top: 54px;
   text-align: center;
@@ -241,7 +351,7 @@
   }
 
   #office {
-    background: url("office-background.jpg");
+    background-image: url(office-background.jpg);
     background-size: cover;
     height: 481px;
     align-items: center;
@@ -274,7 +384,7 @@
   }
 
   #whiteboard {
-    background: url("whiteboard.jpg");
+    background-image: url(whiteboard.jpg);
     background-size: cover;
     background-color: rgba(128,0,0,.5);
     margin-top: -20px;
@@ -282,7 +392,7 @@
   }
 
   #class {
-    background: url("class.jpg");
+    background-image: url(class.jpg);
     background-size: cover;
     margin-top: 1px;
     margin-left: -14px
@@ -303,71 +413,21 @@
     height: 330px;
     align: left;
 
-  .instructors {
-    display: inline-block;
-    padding: 10px;
-  }
+    .instructors {
+      display: inline-block;
+      padding: 10px;
+    }
 
-  h4 {
-    font-color: black;
-    padding-top: 45px;
+    h4 {
+      font-color: black;
+      padding-top: 45px;
+    }
+
   }
 
 }
 
-/* End of Splash view */
-}
-
-/* Start of user#show view */
-  #usershow {
-
-    .row {
-      border-style: ridge;
-      border-width: .3px;
-      -webkit-box-shadow: 0 15px 6px -6px #70010e;
-  	  -moz-box-shadow: 0 15px 6px -6px #70010e;
-  	  box-shadow: 0 15px 6px -6px #70010e;
-    }
-
-    hr {
-    align-self: center;
-    border: 0;
-    height: 5px;
-    // background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
-    }
-
-    img {
-      width: 100%;
-    }
-
-    h1 {
-      font-family: "PDF_in_Text";
-      text-transform: uppercase;;
-    }
-
-    .city {
-      font-family: 'circular';
-      color: gray;
-      position: absolute;
-      top: -10px;
-      right: 10px;
-    }
-
-    .fa-icon {
-      color: navy;
-    }
-
-    a {
-      color: white;
-    }
-
-  }
-
-  /* comments on comments indentation */
-  .replies {margin-left: 50px;}
-
-/* Start of notifications#index view */
+/*----------------------- START of NOTIFICATIONS INDEX -----------------------*/
 #notificationsindex {
   background-color: white;
 
@@ -384,71 +444,24 @@
 
 }
 
-/* Start of post#index view */
+/*--------------------------- START of POST INDEX ----------------------------*/
   #postindex {
     h1 {
       margin-top: 50px;
     }
   }
 
-/* Start of post#new view */
+/*--------------------------- START of POST NEW ------------------------------*/
   #postnew {
     h1 {
       margin-top: 50px;
     }
   }
 
-  /* Start of sign in view */
-  #passwordnew {
-    position: absolute;
-    width: 370px;
-    margin: 0 auto;
-    vertical-align: middle;
-    border-radius: 10px;
-    padding: 40px;
-
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255,.92);
-    margin: -185px 0 0 -185px;
-    left: 50%;
-    top: 50%;
-
-    h4 {
-      font-family: 'Circular'
-    }
-
-    .form-fields {
-      width: 255px;
-    }
-
-    .col-xs-3 {
-      width: 255px;
-    }
-
-    .btn-primary {
-      width: 216px;
-    }
-
-  }
-
-  /* Start of comment new view */
+/*-------------------------- START of COMMENT NEW ----------------------------*/
   #commentnew {
-    font-family: 'Circular'
-  }
-
-  /* Start of User edit view */
-  #useredit {
-
-    .container {
-      margin: 0 auto;
-    }
-
     h1 {
       font-family: 'PDF_in_Text';
       text-transform: uppercase;
     }
-
-    .form-fields {
-      width: 500px;
-    }
-
   }
