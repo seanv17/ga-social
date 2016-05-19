@@ -14,10 +14,17 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  before_destroy :destroy_posts
+
+
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
   acts_as_messageable
+
+  def destroy_posts
+    self.posts.destroy_all
+  end
 
   def name
     "#{first_name} #{last_name}"
