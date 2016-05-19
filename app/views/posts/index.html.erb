@@ -36,6 +36,7 @@
               <%= post.body.truncate(250) %>
               <% if post.body.length>250 %>
                 <%= link_to 'Read more', post_path(post) %>
+                <%= link_to new_comment_path(post), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do %><i class="fa fa-pencil-square" aria-hidden="true"></i><% end %>
               <% end %>
             </div>
             <!-- likes -->
