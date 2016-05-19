@@ -10,7 +10,6 @@
     <% else %>
       <%= comment.body %>
     <% end %>
-
 <% my_path = "/posts/" + comment.post.id.to_s + "/comments/new/" + comment.id.to_s%>
   <p><%= link_to 'reply', my_path, {:class => 'btn btn-info', :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}%></p><hr>
 </div>
