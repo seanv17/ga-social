@@ -16,6 +16,7 @@
             <%= f.input :current_position, class: "form-control", placeholder: "Current Position", autofocus: true %>
             <%= f.input :current_employer, class: "form-control", placeholder: "Employer", autofocus: true %>
             <%= f.input :tech_preference, class: "form-control", placeholder: "Technology Preference", autofocus: true %>
+            <%= f.input :seeking_work, label: 'Seeking work', collection: [true, false], class: "form-control", placeholder: "Employer", autofocus: true %>
             <%= f.button :submit, "Save", class: "btn btn-success" %>
         <% end %>
       </ul
