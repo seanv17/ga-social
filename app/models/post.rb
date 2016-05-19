@@ -2,7 +2,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   has_many :likes
-  has_many :notifications, dependent: :destroy
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
 
@@ -10,7 +9,13 @@ class Post < ActiveRecord::Base
 
   validates :body, presence: true
 
-  #the search method is used in posts contreller #index to search for posts
+  before_destroy :destroy_comments
+
+  def destroy_comments
+    self.comments.destroy_all
+  end
+
+#the search method is used in posts contreller #index to search for posts
   def self.search(search)
     where("LOWER(body) LIKE ?", "%#{search.downcase}%")
   end
