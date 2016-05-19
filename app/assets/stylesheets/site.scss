@@ -453,6 +453,32 @@ section {
       font-family: "PDF_in_Text";
     }
 
+    .fa-trash {
+      color: red;
+      font-size: 1.3em;
+    }
+
+    .fa-pencil-square {
+      color: green;
+      font-size: 1.2em;
+    }
+
+    .fa-pencil-square-o {
+      font-size: 1.2em;
+    }
+
+    #search {
+      font-size: 1.2em;
+    }
+
+    #spost {
+      font-size: 1.2em;
+    }
+
+    .postrows {
+      margin: 2px; 
+    }
+
   }
 
 /*--------------------------- START of POST NEW ------------------------------*/

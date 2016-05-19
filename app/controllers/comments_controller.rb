@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
   def create
     if params[:comment][:parent_id].to_i > 0
-      parent = Comment.find_by_id(params[:comment].destroy(:parent_id))
+      parent = Comment.find_by_id(params[:comment].delete(:parent_id))
       @comment = parent.children.build(comment_params)
       @comment.user_id = current_user.id
       @comment.post_id = params[:post_id]
