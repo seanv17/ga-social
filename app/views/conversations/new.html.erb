@@ -1,20 +1,20 @@
 <section>
-  <div id="conversationsindex">
+  <div id="conversationsnew">
     <div class="container">
       <h1> Current Conversation </h1>
       <%= form_tag conversations_path, method: :post do %>
         <div>
           <%= select_tag :user_id, options_from_collection_for_select(@recipients, :id, :first_name) %>
-        </div>
+        </div><br>
         <div>
-          <%= text_field_tag :subject, nil, placeholder: "subject" %>
+          <%= text_field_tag :subject, nil, placeholder: "Subject" %>
         </div>
-        <div>
-          <%= text_area_tag :body, nil, placeholder: "leave a comment" %>
-        </div>
+        <div><br>
+          <%= text_area_tag :body, nil, placeholder: "Leave a comment" %>
+        </div><br>
         <%= submit_tag 'Send', class: 'btn btn-primary' %>
-      <% end %>
-      <%= link_to "back", conversations_path %>
+      <% end %><br>
+      <%= link_to "Back", conversations_path, class: 'btn btn-info' %>
     </div>
   </div>
 </section>

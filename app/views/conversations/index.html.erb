@@ -7,7 +7,7 @@
       <% for conversation in @conversations %>
         <% conversation.participants.each do |participant| %>
         <li id="conversations">
-          <b>From: </b> <%= participant.first_name %><br>
+          <b>From: </b> <%= participant.first_name %> <%= participant.last_name %><br>
           <b>Topic: </b><%= link_to conversation.subject, conversation_path(conversation) %>
         </li>
         <% end %>
