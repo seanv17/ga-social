@@ -33,7 +33,7 @@ Rails.application.configure do
   }
 
 
-  Configure paperclip for uploading photos to AWS S3 bucket
+  # Configure paperclip for uploading photos to AWS S3 bucket
   config.paperclip_defaults = {
     :storage => :s3,
     :bucket => ENV['S3_BUCKET_NAME'],
