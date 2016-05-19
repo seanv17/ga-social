@@ -236,7 +236,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  aws-sdk (< 2.0)
+  aws-sdk
   best_in_place (~> 3.0.1)
   bootstrap-modal-rails
   bootstrap-sass (~> 3.2.0)

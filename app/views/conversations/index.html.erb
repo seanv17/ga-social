@@ -16,3 +16,16 @@
     </div>
   </div>
 </section>
+<%all_conv = current_user.mailbox.conversations%>
+<%all_conv.each do |participant|%>
+  <div class="ligne_conversation">
+  <ul>
+    <a href="conversations/<%=@conversation_id%>">
+      <li>
+        <%=image_tag participant.messages.last.sender.avatar.url(:thumb) %>
+        <%=participant.messages.last.sender.name%>
+        <%=participant.messages.last.body%>
+      </li>
+    </a>
+  </ul></div>
+  <% end %>

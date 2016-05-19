@@ -53,7 +53,7 @@ gem 'mailboxer', '~> 0.13.0'
 #Hiding Keys
 gem 'dotenv', '~> 2.1', '>= 2.1.1'
 
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk'
 
 
 
