@@ -464,3 +464,56 @@ section {
       text-transform: uppercase;
     }
   }
+
+  /*---------------------------- START of ABOUT US ---------------------------*/
+  #aboutus {
+    margin-top: -75px;
+    font-size: 15px;
+
+    @media (min-width: 768px) {
+      .container-small {
+        width: 700px;
+        margin: 0 auto;
+      }
+    }
+
+    #title {
+      font-size: 75px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .row {
+      border-style: ridge;
+      border-width: .3px;
+      -webkit-box-shadow: 0 8px 6px -6px #70010e;
+      -moz-box-shadow: 0 8px 6px -6px #70010e;
+      box-shadow: 0 8px 6px -6px #70010e;
+    }
+
+
+    img {
+      height: 150px;
+      margin: 15px;
+    }
+
+    h1 {
+      margin-top: -3px;
+      margin-bottom: -25px;
+      color: black;
+      padding-top: 10px;
+      text-transform: uppercase;
+      font-family: 'PDF_in_Text'
+    }
+
+    a {
+      color: black;
+    }
+
+    a:hover,
+    a:focus {
+      color: black;
+      font-color: black;
+    }
+
+  }
