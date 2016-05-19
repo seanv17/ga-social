@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'aboutus/index'
+
   get 'conversations/index'
 
   get 'notifications/index'
@@ -40,7 +42,8 @@ Rails.application.routes.draw do
 #----------------------------NOTIFACATIONS PATHS-------------------------------------#
   get "/notifications", to: "notifications#index", as: :notifications
   get "/notifications/:id/link_through", to: "notifications#link_through", as: :link_through
-
+  #----------------------------NOTIFACATIONS PATHS-------------------------------------#
+  get "/aboutus", to: "aboutus#index", as: :aboutus
 
 
   # messages path
