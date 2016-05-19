@@ -523,3 +523,53 @@
       }
 
     }
+
+/*-------------------------- START of CONVO INDEX ----------------------------*/
+#conversationsindex {
+  background-color: white;
+
+  h1 {
+    font-family: "PDF_in_Text";
+    text-transform: uppercase;
+    font-size: 55px;
+  }
+
+  #conversations {
+    margin-top: 1em;
+    list-style: none;
+  }
+
+  li {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: beige;
+    width: 500px;
+  }
+
+}
+
+/*-------------------------- START of CONVO SHOW -----------------------------*/
+#conversationsshow {
+
+  textarea {
+    width: 400px;
+    height: 100px;
+  }
+
+}
+
+/*------------------------- START of CONVO NEW -------------------------------*/
+#conversationsnew {
+
+  h1 {
+    font-family: "PDF_in_Text";
+    text-transform: uppercase;
+    font-size: 55px;
+  }
+
+  textarea {
+    width: 400px;
+    height: 100px;
+  }
+
+}

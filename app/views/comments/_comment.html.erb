@@ -11,6 +11,7 @@
       </div>
     <% else %>
       <%= comment.body %>
+        <%= link_to my_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do %><i class="fa fa-reply" aria-hidden="true"></i><% end %>
     <% end %>
   <hr>
 </div>
