@@ -523,3 +523,26 @@
       }
 
     }
+
+/*------------------------ START of COMMENTS INDEX ---------------------------*/
+#conversationsindex {
+  background-color: white;
+
+  h1 {
+    font-family: "PDF_in_Text";
+    text-transform: uppercase;
+  }
+
+  #conversations {
+    margin-top: 1em;
+    list-style: none;
+  }
+
+  li {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: beige;
+    width: 500px;
+  }
+
+}
