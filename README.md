@@ -24,16 +24,19 @@
 ####10. Modals
 
 ##Gems Used
-1. Friendly_id
+1. friendly_id
 2. closure_tree
 3. devise
 4. best_in_place
 5. font_awesome_rails
-6. Mailboxer
-7. Paperclip
+6. mailboxer
 8. will_paginate_bootstrap
 9. data-confirm-modal
 10. bootstrap-modal
+11. bootstrap-saas
+12. simple_form
+13. pry-byebug
+14. hirb
 
 ##Application Flow
   ![alt text](GA Social App Flow.png)
@@ -41,8 +44,15 @@
 ##ER Diagram
   ![alt text](GA Social ER Diagram.png)
 
+##Getting Started
+1. Clone down repository
+2. Change directory into project
+3. Run 'bundle install'
+4. Run 'rake db:migrate'
+5. Run 'rake db:seed'
+
 ##Team Members
-1.  Hila Vaisler
+1. Hila Vaisler
 2. Bob Kliger
 3. Sean Van Ho
 4. Sam Huang
