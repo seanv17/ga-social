@@ -1,18 +1,18 @@
-<h1>subject</h1>
-
-<% @conversation.receipts_for(current_user).each do |receipt| %>
-<div>
-  <div><%= receipt.message.sender.name %> commented:</div>
-  <p><%= receipt.message.body %></p>
-</div>
-<% end %>
-
-<%= form_tag conversation_messages_path(@conversation), method: :post do %>
-<div>
-  <%= text_area_tag :body %>
-</div>
-
-<%= submit_tag %>
-<% end %>
-
-<%= link_to "conversation", conversations_path %>
+<section>
+  <div id="conversationsshow">
+    <div class="container">
+      <% @conversation.receipts_for(current_user).each do |receipt| %>
+        <b><%= receipt.message.sender.name %></b><br>
+        <%= receipt.message.body %>
+      <hr><br>
+      <% end %>
+      <%= form_tag conversation_messages_path(@conversation), method: :post do %>
+      <div>
+        <%= text_area_tag :body %>
+      </div><br>
+      <%= submit_tag 'Reply', class: 'btn btn-primary' %>
+      <% end %><br>
+      <%= link_to "Back", conversations_path, class: 'btn btn-info' %>
+    </div>
+  </div>
+</section>

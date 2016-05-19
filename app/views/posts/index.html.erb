@@ -5,9 +5,7 @@
       <%= link_to "<i class='fa fa-search'></i> Search Posts".html_safe, search_posts_path, :class => 'btn btn-info', :id => "search" %>
       <%= link_to "<i class='fa fa-pencil-square-o'></i> Add Post".html_safe, new_post_path, {:class => 'btn btn-info', :id => 'spost', :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %>
       <hr>
-      <div id="modal-window" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      </div>
-
+      <div id="modal-window" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
         <% for post in @posts do %>
           <b>Posted by: <%=link_to post.user.first_name + " " + post.user.last_name, user_path(post.user)%></b> <span class="quiet"><small><%= time_ago_in_words(post.created_at) %> ago</small></span><br>
           <%= image_tag post.avatar? ? post.avatar.url(:medium): "" %>
