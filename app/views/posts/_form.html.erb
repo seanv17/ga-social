@@ -1,7 +1,7 @@
 <!-- This partial is called in the new.js.erb which pops up the modal  -->
 
 <% @post = Post.new %>
-<%= @user = current_user %>
+<% @user = current_user %>
 <%= form_for @post do |f| %>
     <div class="row">
       <div class="well col-md-4 col-md-offset-4">
