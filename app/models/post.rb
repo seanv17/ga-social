@@ -10,8 +10,9 @@ class Post < ActiveRecord::Base
 
   validates :body, presence: true
 
+  #the search method is used in posts contreller #index to search for posts
   def self.search(search)
-    where("body LIKE ?", "%#{search}%")
+    where("LOWER(body) LIKE ?", "%#{search.downcase}%")
   end
 
   # calculate number of likes
@@ -23,6 +24,7 @@ class Post < ActiveRecord::Base
     self.likes.where(like: false).size
   end
 
+  #the trunc method is used in the best_in_place (gem) post body field in the display_as attribute
   def trunc
     self.body.truncate(250)
   end
