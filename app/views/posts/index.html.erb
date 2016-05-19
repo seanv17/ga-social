@@ -39,19 +39,19 @@
               <% end %>
               <%= link_to new_comment_path(post), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do %><i class="fa fa-pencil-square" aria-hidden="true"></i><% end %>
             </div>
-            <!-- likes -->
-            <div class="likes pull-right">
-              <%= link_to like_post_path(post, like: true), method: :post do %>
-                <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= post.thumbs_up_total %>
-              <% end %>
-              &nbsp&nbsp&nbsp
-              <%= link_to like_post_path(post, like: false), method: :post do %>
-                <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= post.thumbs_down_total %>
-              <% end %>
-            </div>
-              <!-- end of likes -->
           <% end %>
           <!-- END OF USER AUTHORIZATION -->
+          <!-- likes -->
+          <div class="likes pull-right">
+            <%= link_to like_post_path(post, like: true), method: :post do %>
+              <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= post.thumbs_up_total %>
+            <% end %>
+            &nbsp&nbsp&nbsp
+            <%= link_to like_post_path(post, like: false), method: :post do %>
+              <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= post.thumbs_down_total %>
+            <% end %>
+          </div>
+            <!-- end of likes -->
             <!-- calculate number of comments -->
           <% count = 0 %>
           <% post.comments.all.each do |c|%>
