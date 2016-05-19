@@ -1,14 +1,16 @@
 <div class="section replies">
   <p class="text-muted">Added by <%= comment.user.first_name %> <%= comment.user.last_name %> on
     <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
-
-    <%= best_in_place comment, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
-    <% my_edit_path = "/posts/" + comment.post.id.to_s + "/comments/" + comment.id.to_s%>
     <% if comment.user == current_user %>
-      <%= button_to "Edit Comment", my_edit_path, method: 'get', class: 'btn btn-warning' %>
-      <%= button_to "Delete Comment", my_edit_path , method: 'delete', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm left-spacer'%>
+      <div title="Click to edit">
+        <%= best_in_place comment, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+        <% my_delete_path = "/posts/" + comment.post.id.to_s + "/comments/" + comment.id.to_s%>
+        <%= button_to "Delete Comment", my_delete_path , method: 'delete', data: {confirm: 'Are you sure you want to delete this comment?'}, class: 'btn btn-danger btn-sm left-spacer'%>
+      </div>
+    <% else %>
+      <%= comment.body %>
     <% end %>
 
 <% my_path = "/posts/" + comment.post.id.to_s + "/comments/new/" + comment.id.to_s%>
-  <p><%= link_to 'reply', my_path %></p><hr>
+  <p><%= link_to 'reply', my_path, {:class => 'btn btn-info', :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}%></p><hr>
 </div>

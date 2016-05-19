@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require best_in_place
 //= require turbolinks
+//= require data-confirm-modal
+//= require bootstrap-modal
 //= require bootstrap-sprockets
 //= require_tree .
 
