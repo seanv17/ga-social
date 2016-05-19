@@ -5,10 +5,23 @@
         <%= @post.user.first_name %>
         <%= @post.body %><br /><br />
         <%= link_to 'Add a Comment', new_comment_path(@post), class: 'btn btn-primary' %>
-      </div><br /><br />
+      </div>
+      <!-- likes -->
+      <div class="likes pull-right">
+        <%= link_to like_post_path(@post, like: true), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @post.thumbs_up_total %>
+        <% end %>
+        &nbsp&nbsp&nbsp
+        <%= link_to like_post_path(@post, like: false), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @post.thumbs_down_total %>
+        <% end %>
+      </div>
+        <!-- end of likes -->
+      <br /><br />
         <% if @comments %>
           <%= comments_tree_for @comments %>
         <% end %>
+
     </div>
   </div>
 </section>
