@@ -53,9 +53,6 @@ gem 'mailboxer', '~> 0.13.0'
 #Hiding Keys
 gem 'dotenv', '~> 2.1', '>= 2.1.1'
 
-gem 'aws-sdk'
-
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate-bootstrap'

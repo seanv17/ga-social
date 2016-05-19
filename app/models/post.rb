@@ -4,10 +4,6 @@ class Post < ActiveRecord::Base
   has_many :likes
   has_many :notifications, dependent: :destroy
 
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
-
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-
   validates :body, presence: true
 
   before_destroy :destroy_comments
