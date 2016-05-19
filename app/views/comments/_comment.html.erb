@@ -1,14 +1,17 @@
 <div class="section replies">
   <p class="text-muted">Added by <%= comment.user.first_name %> <%= comment.user.last_name %> on
-    <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
-    <% my_delete_path = "/posts/" + comment.post.id.to_s + "/comments/" + comment.id.to_s%>
-    <% if current_user.id == comment.user_id %>
-      <%= best_in_place comment, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
-        <%= button_to "Delete Comment", my_delete_path , method: 'delete',
-        data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm left-spacer'%>
+    <%= l((comment.created_at-7.hours), format: '%B, %d %Y %H:%M:%S') %></p>
+    <% if comment.user == current_user %>
+      <div title="Click to edit">
+        <%= best_in_place comment, :body, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+        <% my_delete_path = "/posts/" + comment.post.id.to_s + "/comments/" + comment.id.to_s%>
+        <%= link_to my_delete_path, method: :delete, data:{confirm: "Are you sure you want to delete this comment?"} do %><i class="fa fa-trash" aria-hidden="true"></i><% end %>
+        <% my_path = "/posts/" + comment.post.id.to_s + "/comments/new/" + comment.id.to_s%>
+        <%= link_to my_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do %><i class="fa fa-reply" aria-hidden="true"></i><% end %>
+      </div>
     <% else %>
       <%= comment.body %>
+        <%= link_to my_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do %><i class="fa fa-reply" aria-hidden="true"></i><% end %>
     <% end %>
-<% my_path = "/posts/" + comment.post.id.to_s + "/comments/new/" + comment.id.to_s%>
-  <p><%= link_to 'reply', my_path, {:class => 'btn btn-info', :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}%></p><hr>
+  <hr>
 </div>

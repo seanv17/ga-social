@@ -4,7 +4,7 @@
       <% for user in @users %>
       <div class="row">
             <div class="col-xs-6 col-md-4">
-              <%= link_to image_tag(user.avatar.url(:thumb), :class => 'img-circle'), user_path( User.friendly.find(user.id) ) %>
+              <%= link_to image_tag(user.image, :class => 'img-circle'), user_path( User.friendly.find(user.id) ) %>
             </div>
             <div class="cl-xs-6 col-md-8 users">
               <h1><%= link_to "#{user.first_name} #{user.last_name}", user_path( User.friendly.find(user.id) ) %></h1><br><br>

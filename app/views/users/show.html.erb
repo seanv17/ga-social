@@ -1,10 +1,13 @@
-
 <div id="usershow">
   <section>
     <div class="container">
       <div class="row">
         <div class="col-xs-4">
-          <%= image_tag @user.avatar.url(:medium) %>
+          <% if @user.image.blank? %>
+          <%= image_tag "defaultprofile.jpg", :width => 200 %>
+          <% else %>
+          <%= image_tag @user.image %>
+          <% end %>
         </div>
         <div class="col-xs-8">
           <h1><%= @user.first_name %> <%= @user.last_name %></h1><hr />
@@ -18,7 +21,10 @@
       <br />
       <% if current_user.id == @user.id%>
       <div>
-        <%= button_to "Edit Post", edit_user_path, method: 'get', class: 'btn btn-warning' %>
+        <%= button_to "Edit Profile", edit_user_path, method: 'get', class: 'btn btn-warning' %>
+      </div>
+      <div><br>
+        <%= button_to "Change Password", edit_user_registration_path, method: 'get', class: 'btn btn-info' %>
       </div>
       <% end %>
     </div>

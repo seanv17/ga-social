@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
 
   def index
+    #check if there are search params to render
     if params[:search]
+      #serach is a method defined in the post model file
       @posts = Post.order(updated_at: :desc).search(params[:search]).paginate(:page => params[:page], :per_page => 6)
     else
       @posts = Post.order(updated_at: :desc).paginate(:page => params[:page], :per_page => 6)
@@ -101,7 +103,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body, :user_id, :avatar)
+    params.require(:post).permit(:body, :user_id, :image)
   end
 
 end
