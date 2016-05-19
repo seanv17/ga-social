@@ -1,9 +1,12 @@
 <h1> all convo </h1>
 <% for conversation in @conversations %>
-
-<div>
-  <%= link_to conversation.subject, conversation_path(conversation) %>
-</div>
+  <% conversation.participants.each do |participant| %>
+    <div>
+      <%= participant.name %>
+    </div>
+    <div>
+      <%= link_to conversation.subject, conversation_path(conversation) %>
+    </div>
+  <% end %>
 <% end %>
-
 <%= link_to "new conversations", new_conversation_path %>

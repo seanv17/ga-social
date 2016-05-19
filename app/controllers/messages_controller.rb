@@ -2,8 +2,14 @@ class MessagesController < ApplicationController
   before_action :set_conversation
 
   def create
-    receipt = current_user.reply_to_conversation(@conversation, params[:body])
+    @body = params[:body]
+    receipt = current_user.reply_to_conversation(@conversation, @body)
+    if (@body.empty?)
+      alert = "body cannot be empty"
+      render :action => :show
+    else
     redirect_to conversation_path(receipt.conversation)
+  end
   end
 
   private
